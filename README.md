@@ -1,42 +1,21 @@
-# MVV Sentinel Web 1.0
+# MVV Experience 2.0 Stable
 
-Sitio estático listo para abrir, probar y publicar. No requiere servidor, base de datos ni instalación de dependencias.
-
-## Vista previa local
-
-Abra `index.html` con un navegador. Para evitar restricciones del navegador con archivos locales, también puede ejecutar:
-
-```bash
-python3 -m http.server 8080
-```
-
-Después abra `http://localhost:8080`.
-
-## Ediciones rápidas
-
-- **Precios y configuraciones:** `script.js`, bloque `pricingConfig`.
-- **Textos institucionales, valores, experiencia y contacto:** `index.html`.
-- **Colores, tipografía, tamaños y diseño:** `styles.css`, variables al inicio.
-- **PDF:** reemplace el archivo correspondiente en `assets/docs/` conservando su nombre.
-- **Imágenes:** reemplace archivos en `assets/img/` conservando su nombre.
-- **C11 Seguridad Inteligente:** actualmente aparece como “En proceso”. Busque `C11 Seguridad Inteligente` en `index.html` para habilitarlo cuando esté listo.
-
-## Estructura
-
-- `index.html`: contenido y navegación.
-- `styles.css`: diseño responsivo.
-- `script.js`: precios, animaciones y menú móvil.
-- `assets/img/`: imágenes.
-- `assets/docs/`: documentos PDF.
+Sitio web estático, modular y listo para GitHub Pages.
 
 ## Publicación
+1. Suba a la raíz del repositorio: `index.html`, `config.js`, `README.md` y la carpeta `assets`.
+2. En GitHub: Settings → Pages → Deploy from a branch → `main` → `/(root)`.
+3. Guarde y espere el despliegue.
 
-### Claude
-Puede subir la carpeta o el ZIP completo para revisión y solicitar cambios sobre los tres archivos principales. Para una vista previa funcional, Claude debe conservar la estructura de carpetas.
+## Cambios frecuentes
+- Precios y contacto: edite `config.js`.
+- Colores y diseño: edite `assets/css/styles.css`.
+- Interacciones: edite `assets/js/app.js`.
+- Documentos: reemplace los PDF en `assets/docs` conservando los nombres.
+- Imágenes: reemplace archivos en `assets/images` y conserve el nombre o actualice la ruta en `index.html`.
 
-### GitHub Pages / Cloudflare Pages / Netlify
-Suba el contenido de esta carpeta a la raíz del proyecto. No se requiere comando de compilación. El directorio de publicación es `/`.
-
-## Recomendación de seguridad comercial
-
-Antes de compartir públicamente, confirme si los precios deben quedar visibles. Para ocultarlos temporalmente, cambie `price` en `script.js` por “Disponible bajo solicitud”.
+## Archivos principales
+- `index.html`: estructura y contenido.
+- `config.js`: precios, contacto y rutas de PDF.
+- `assets/css/styles.css`: apariencia.
+- `assets/js/app.js`: menú, animaciones y contenido dinámico.
