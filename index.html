@@ -1,63 +1,184 @@
 <!doctype html>
-<html lang="es-MX">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MVV Soluciones Integrales. Soluciones tecnológicas para seguridad, inteligencia, comunicaciones y centros de comando.">
-  <meta name="theme-color" content="#061425">
-  <title>MVV Soluciones Integrales | Seguridad, Inteligencia y Tecnología</title>
-  <link rel="icon" href="assets/images/mvv-logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="MVV Experience 3.1.2: soluciones tecnológicas, capacidades operativas y servicios profesionales para infraestructura crítica y seguridad pública.">
+  <title>MVV Experience 3.1.2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
-<header class="site-header" id="site-header">
-  <div class="nav container">
-    <a class="brand" href="#inicio" aria-label="MVV Soluciones Integrales — Inicio"><img src="assets/images/mvv-logo.svg" alt="MVV Soluciones Integrales"></a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span><b>Menú</b></button>
-    <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
-      <div class="nav-item"><button class="nav-link-button" type="button">Inicio</button><div class="dropdown-menu"><a href="#inicio">Portada</a><a href="#quienes-somos">Quiénes Somos</a><a href="#experiencia">Experiencia</a></div></div>
-      <div class="nav-item"><button class="nav-link-button" type="button">Soluciones</button><div class="dropdown-menu"><a href="#sentinel-air">MVV Sentinel Air</a><a href="#sentinel-command">MVV Sentinel Command Mobile</a><a href="#sentinel-connect">MVV NOSSACEL Connect</a><a href="#c11">C11 Seguridad Inteligente <span class="menu-status">En proceso</span></a></div></div>
-      <a href="#presupuesto">Precios</a><a href="#documentacion">Documentación</a><a href="#contacto">Contacto</a>
+<header class="site-header" id="top">
+  <div class="container nav-wrap">
+    <a href="#inicio" class="brand" aria-label="MVV inicio">
+      <img src="assets/images/mvv-logo.svg" alt="MVV Soluciones Integrales">
+      <span>Experience 3.1.2</span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#mvv">MVV</a>
+      <div class="nav-dropdown">
+        <button>Soluciones <span>⌄</span></button>
+        <div class="dropdown-panel">
+          <strong>Soluciones tecnológicas</strong>
+          <a href="#air">MVV Sentinel Air</a>
+          <a href="#connect">MVV NOSSACEL Connect</a>
+          <a href="#mobile">MVV Command Mobile</a>
+          <strong>Capacidades operativas</strong>
+          <a href="#tactical">MVV Sentinel Tactical</a>
+          <a href="#command">MVV Sentinel Command</a>
+          <a href="#c11">C11 Seguridad Inteligente</a>
+        </div>
+      </div>
+      <a href="#servicios">Servicios MVV</a>
+      <a href="#documentacion">Documentación</a>
+      <a href="#contacto" class="nav-cta">Contacto</a>
     </nav>
   </div>
 </header>
-<main id="contenido">
+
+<main>
 <section class="hero" id="inicio">
-  <div class="hero-backdrop" aria-hidden="true"></div>
-  <div class="hero-grid container">
-    <div class="hero-copy reveal">
-      <p class="eyebrow">MVV Soluciones Integrales</p>
-      <h1>Tecnología que se convierte en <span>capacidad operativa.</span></h1>
-      <p class="hero-lead">Diseñamos e integramos soluciones para fortalecer la conciencia situacional, la coordinación y la continuidad de operaciones estratégicas.</p>
-      <div class="hero-actions"><a class="btn btn-primary" href="#soluciones">Explorar soluciones</a><a class="btn btn-ghost" href="#presupuesto">Ver propuesta económica</a></div>
-      <div class="hero-points"><span>Ingeniería especializada</span><span>Integración llave en mano</span><span>Soporte continuo</span></div>
+  <div class="hero-media"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content reveal">
+    <span class="eyebrow light">MVV · Capacidades para misiones críticas</span>
+    <h1>Integramos tecnología.<br><span>Garantizamos continuidad.</span></h1>
+    <p>Soluciones tecnológicas, capacidades operativas, ingeniería y servicios profesionales para infraestructura crítica, seguridad pública y operaciones que no pueden detenerse.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#soluciones">Explorar soluciones</a>
+      <a class="btn btn-ghost" href="#mvv">Conocer MVV</a>
     </div>
-    <div class="hero-visual reveal"><div class="hero-frame"><img src="assets/images/image_1.jpg" alt="Arquitectura tecnológica y operativa de MVV"></div><div class="hero-status"><i></i> Soluciones integradas para operaciones críticas</div></div>
+    <div class="hero-proof">
+      <div><b>Ingeniería</b><span>Diseño e integración</span></div>
+      <div><b>Implementación</b><span>Soluciones llave en mano</span></div>
+      <div><b>Continuidad</b><span>Soporte, NOC y SLA</span></div>
+    </div>
   </div>
-  <a class="scroll-cue" href="#quienes-somos">Conocer MVV <span>↓</span></a>
 </section>
 
-<section class="section" id="quienes-somos"><div class="container"><div class="section-heading reveal"><p class="eyebrow">Quiénes Somos</p><h2>Un integrador tecnológico con visión operativa.</h2><p>MVV articula ingeniería, tecnología, implementación y acompañamiento para entregar soluciones completas, interoperables y preparadas para evolucionar.</p></div><div class="value-grid"><article class="value-card reveal"><span>01</span><h3>Ingeniería</h3><p>Arquitecturas alineadas con el entorno, el riesgo y la operación.</p></article><article class="value-card reveal"><span>02</span><h3>Integración</h3><p>Tecnologías y plataformas coordinadas bajo una sola solución.</p></article><article class="value-card reveal"><span>03</span><h3>Implementación</h3><p>Suministro, configuración, pruebas, capacitación y puesta en marcha.</p></article><article class="value-card reveal"><span>04</span><h3>Continuidad</h3><p>Soporte, mantenimiento y evolución tecnológica de la solución.</p></article></div></div></section>
+<section class="section mvv" id="mvv">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Experiencia que convierte tecnología en capacidad operativa.</h2>
+      <p class="lead">MVV diseña, integra, implementa y mantiene ecosistemas tecnológicos para organizaciones donde la disponibilidad, la coordinación y la respuesta son críticas.</p>
+      <div class="quote">“No solo suministramos equipos. Acompañamos todo el ciclo de vida de la solución.”</div>
+    </div>
+    <div class="experience-grid reveal">
+      <article><span>01</span><h3>Infraestructura crítica</h3><p>Diseño e integración de soluciones para entornos estratégicos.</p></article>
+      <article><span>02</span><h3>C2, C4 y C5</h3><p>Centros de comando, monitoreo y coordinación operativa.</p></article>
+      <article><span>03</span><h3>Videovigilancia y LPR</h3><p>CCTV, arcos lectores y detección de velocidad.</p></article>
+      <article><span>04</span><h3>Redes y comunicaciones</h3><p>Fibra óptica, conectividad resiliente e integración multimarca.</p></article>
+      <article><span>05</span><h3>Mantenimiento especializado</h3><p>Preventivo, correctivo, soporte técnico y renovación tecnológica.</p></article>
+      <article><span>06</span><h3>Continuidad operativa</h3><p>NOC, SLA, mesa de ayuda y acompañamiento especializado.</p></article>
+    </div>
+  </div>
+</section>
 
-<section class="section section-soft" id="experiencia"><div class="container split"><div class="reveal"><p class="eyebrow">Experiencia MVV</p><h2>Más que proveedores: integradores de capacidades críticas.</h2><p>La experiencia de MVV se concentra en infraestructura de seguridad, videovigilancia, comunicaciones, centros de control y soluciones llave en mano para entornos de alta exigencia.</p><blockquote>Un solo responsable para coordinar la solución completa.</blockquote></div><div class="metrics"><div class="metric reveal"><strong>360°</strong><span>Visión integral de la operación</span></div><div class="metric reveal"><strong>24/7</strong><span>Enfoque de continuidad</span></div><div class="metric reveal"><strong>1</strong><span>Arquitectura coordinada</span></div><div class="metric reveal"><strong>4</strong><span>Pilares de integración</span></div></div></div></section>
+<section class="section solutions" id="soluciones">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Portafolio MVV</span>
+      <h2>Soluciones que pueden operar por separado.<br>Capacidades que trabajan como un solo sistema.</h2>
+      <p>El cliente puede adquirir una solución especializada o evolucionar hacia una capacidad operativa integral.</p>
+    </div>
 
-<section class="section section-dark" id="soluciones"><div class="container"><div class="section-heading reveal"><p class="eyebrow">Portafolio de soluciones</p><h2>Tres productos especializados. Una visión operativa integrada.</h2><p><strong>MVV Soluciones Integrales</strong> es la marca institucional. Sentinel Air, Command Mobile y Connect son productos independientes que pueden implementarse de forma individual o integrarse conforme a cada operación.</p></div><div class="architecture reveal"><div class="architecture-line"></div><a href="#sentinel-air"><span>01</span><strong>MVV Sentinel Air</strong><small>Visión aérea persistente</small></a><a href="#sentinel-command"><span>02</span><strong>MVV Sentinel Command Mobile</strong><small>Centro C2 en campo</small></a><a href="#sentinel-connect"><span>03</span><strong>MVV Sentinel Connect</strong><small>Continuidad de comunicaciones</small></a><a class="future" href="#c11"><span>04</span><strong>C11 Seguridad Inteligente</strong><small>En proceso</small></a></div></div></section>
+    <div class="family-title reveal"><span>01</span><div><h3>Soluciones tecnológicas</h3><p>Disponibles de forma independiente.</p></div></div>
+    <div class="solution-grid three">
+      <article class="solution-card reveal" id="air">
+        <div class="card-image"><img src="assets/images/sentinel-air.jpg" alt="MVV Sentinel Air en operación"></div>
+        <div class="card-body"><span class="status available">Disponible</span><h3>MVV Sentinel Air</h3><p class="tagline">Observación aérea persistente.</p><ul><li>Despliegue rápido y operación continua</li><li>Conciencia situacional desde una perspectiva elevada</li><li>Aplicación en seguridad, emergencias y eventos</li></ul><a class="text-link" data-doc="tsb101" href="#">Descargar TSB-101 – Technical Solution Brief →</a></div>
+      </article>
+      <article class="solution-card reveal" id="connect">
+        <div class="card-image"><img src="assets/images/connect.jpg" alt="MVV NOSSACEL Connect comunicaciones críticas"></div>
+        <div class="card-body"><span class="status available">Disponible</span><h3>MVV NOSSACEL Connect</h3><p class="tagline">Comunicaciones críticas y conectividad operativa.</p><ul><li>Conectividad multioperador y enlaces de respaldo</li><li>Video, IoT y sitios remotos o temporales</li><li>Integración, configuración y soporte MVV</li></ul><a class="text-link" data-doc="tsb102" href="#">Descargar TSB-102 – Technical Solution Brief →</a></div>
+      </article>
+      <article class="solution-card reveal" id="mobile">
+        <div class="card-image"><img src="assets/images/mobile-command.jpg" alt="MVV Command Mobile centro de comando móvil"></div>
+        <div class="card-body"><span class="status available">Disponible</span><h3>MVV Command Mobile</h3><p class="tagline">Centro de comando móvil.</p><ul><li>Coordinación táctica en campo</li><li>Operación, comunicaciones y monitoreo integrados</li><li>Despliegue para eventos, emergencias y misiones especiales</li></ul><a class="text-link" data-doc="tsb103" href="#">Descargar TSB-103 – Technical Solution Brief →</a></div>
+      </article>
+    </div>
 
-<section class="section product-section" id="sentinel-air"><div class="container product"><div class="product-media reveal"><img src="assets/images/image_2.jpg" alt="Fotokite para vigilancia aérea persistente"><span class="media-label">Vigilancia aérea persistente</span></div><div class="product-copy reveal"><p class="eyebrow">Producto 01 · MVV Sentinel Air</p><h2>Ver antes. Actuar mejor.</h2><p>Plataforma aérea cautiva basada en Fotokite, diseñada para proporcionar una perspectiva elevada y video en tiempo real sin requerir pilotaje especializado. Su alimentación mediante cable permite mantener la operación durante el tiempo que la misión lo requiera.</p><div class="feature-grid"><span>Despliegue con un botón</span><span>Operación prolongada</span><span>Video en tiempo real</span><span>Integración con el centro de mando</span></div><a class="btn btn-outline" data-doc="fotokite" target="_blank" rel="noopener">Abrir ficha técnica</a></div></div></section>
+    <div class="family-title operational reveal"><span>02</span><div><h3>Capacidades operativas</h3><p>Integración completa respaldada por Servicios Profesionales MVV.</p></div></div>
+    <div class="package-grid">
+      <article class="package-card reveal" id="tactical">
+        <div class="package-top"><span class="level">Nivel I</span><span class="status available">Disponible</span></div>
+        <h3>MVV Sentinel Tactical</h3><p class="package-sub">Observación, conectividad y despliegue táctico.</p>
+        <div class="includes"><h4>Integra</h4><div class="chip-row"><span>Sentinel Air</span><span>NOSSACEL Connect</span><span>Servicios MVV</span></div></div>
+        <ul class="check-list"><li>Ingeniería e integración</li><li>Instalación y configuración</li><li>Capacitación y puesta en operación</li><li>Garantía de integración y soporte inicial</li></ul>
+        <div class="investment"><small>Inversión desde</small><strong>$1,720,000 MXN</strong><span>+ IVA</span></div>
+        <a class="btn btn-secondary full" data-doc="ocb201" href="#">Descargar OCB-201 – Operational Capability Brief</a>
+      </article>
+      <article class="package-card featured reveal" id="command">
+        <div class="recommended">Configuración recomendada</div>
+        <div class="package-top"><span class="level">Nivel II</span><span class="status available">Disponible</span></div>
+        <h3>MVV Sentinel Command</h3><p class="package-sub">De la observación táctica a la coordinación integral.</p>
+        <div class="includes"><h4>Integra</h4><div class="chip-row"><span>Todo Tactical</span><span>Command Mobile</span><span>Servicios MVV</span></div></div>
+        <ul class="check-list"><li>Centro de comando móvil</li><li>Comunicaciones y plataformas integradas</li><li>Protocolos, capacitación y puesta en operación</li><li>Soporte especializado durante el despliegue</li></ul>
+        <div class="investment"><small>Inversión desde</small><strong>$12,872,000 MXN</strong><span>+ IVA · Incluye Ford F-550 2026</span></div>
+        <a class="btn btn-primary full" data-doc="ocb202" href="#">Descargar OCB-202 – Operational Capability Brief</a>
+      </article>
+    </div>
 
-<section class="section section-soft product-section" id="sentinel-command"><div class="container product reverse"><div class="product-media portrait reveal"><img src="assets/images/image_3.jpg" alt="Unidad móvil de control e inteligencia sobre Ford F-550"><span class="media-label">Centro C2 móvil</span></div><div class="product-copy reveal"><p class="eyebrow">Producto 02 · MVV Sentinel Command Mobile</p><h2>Coordinación y decisión en el punto de acción.</h2><p>Unidad móvil de control e inteligencia sobre chasis Ford F-550, con área operativa independiente, estaciones de trabajo, visualización, comunicaciones, energía de respaldo y equipamiento para coordinar operaciones en campo.</p><div class="feature-grid"><span>Centro de trabajo móvil</span><span>Respaldo eléctrico</span><span>Estabilización hidráulica</span><span>Comunicaciones y monitoreo</span></div><a class="btn btn-outline" data-doc="c2" target="_blank" rel="noopener">Abrir ficha técnica</a></div></div></section>
+    <article class="c11-card reveal" id="c11">
+      <div><span class="status developing">En proceso de desarrollo</span><h3>C11 Seguridad Inteligente</h3><p>La siguiente evolución de MVV hacia plataformas de inteligencia, analítica, automatización y coordinación avanzada para infraestructura crítica y seguridad pública.</p></div>
+      <div class="c11-mark">C11<span>visión tecnológica</span></div>
+    </article>
+    <p class="commercial-note">Precios de referencia conforme a la propuesta comercial vigente. Las configuraciones pueden ajustarse al alcance, condiciones del sitio y requerimientos operativos del proyecto.</p>
+  </div>
+</section>
 
-<section class="section product-section" id="sentinel-connect"><div class="container product"><div class="product-media reveal"><img src="assets/images/image_5.jpg" alt="Conectividad e interoperabilidad operativa"><span class="media-label">Comunicaciones resilientes</span></div><div class="product-copy reveal"><p class="eyebrow">Producto 03 · MVV Sentinel Connect</p><h2>La información continúa cuando la operación no puede detenerse.</h2><p>Solución de comunicaciones multioperador orientada a fortalecer el flujo de video, datos y geolocalización entre equipos en campo, unidades móviles y centros de mando.</p><div class="feature-grid"><span>Acceso multioperador</span><span>Conmutación de respaldo</span><span>Video y datos integrados</span><span>Soporte especializado</span></div><a class="btn btn-outline" data-doc="connect" target="_blank" rel="noopener">Abrir ficha técnica</a></div></div></section>
+<section class="section services" id="servicios">
+  <div class="container">
+    <div class="services-hero reveal"><div><span class="eyebrow light">Nuestro principal diferenciador</span><h2>Servicios Profesionales MVV</h2><p>La tecnología adquiere valor cuando está correctamente diseñada, integrada, implementada y respaldada.</p></div></div>
+    <div class="service-flow reveal">
+      <article><span>01</span><h3>Diagnóstico y consultoría</h3><p>Necesidades, riesgos, cobertura y arquitectura.</p></article>
+      <article><span>02</span><h3>Ingeniería e integración</h3><p>Diseño, dimensionamiento e integración multimarca.</p></article>
+      <article><span>03</span><h3>Implementación</h3><p>Suministro, instalación, configuración y pruebas.</p></article>
+      <article><span>04</span><h3>Capacitación</h3><p>Entrenamiento operativo y transferencia de conocimiento.</p></article>
+      <article><span>05</span><h3>Soporte y mantenimiento</h3><p>Mesa de ayuda, preventivo, correctivo y refacciones.</p></article>
+      <article><span>06</span><h3>Continuidad y evolución</h3><p>NOC, SLA, modernización y crecimiento por etapas.</p></article>
+    </div>
+    <div class="service-statement reveal"><strong>El plus de MVV:</strong><span>un solo responsable para todo el ciclo de vida de la solución.</span></div>
+  </div>
+</section>
 
-<section class="section c11-section section-dark" id="c11"><div class="container c11-shell"><div class="c11-copy reveal"><p class="eyebrow">Próxima solución MVV</p><div class="status-pill"><i></i> En proceso</div><h2>C11 Seguridad Inteligente</h2><p class="c11-lead">La siguiente generación de coordinación, inteligencia y operación integrada.</p><p>Este módulo se habilitará conforme avance su definición técnica, operativa y comercial.</p><div class="c11-progress"><span></span></div><small>Arquitectura e integración tecnológica en desarrollo.</small></div><div class="c11-visual reveal" aria-hidden="true"><div class="radar ring-1"></div><div class="radar ring-2"></div><div class="radar ring-3"></div><div class="c11-core"><strong>C11</strong><span>Seguridad Inteligente</span></div><div class="node node-a">Coordinación</div><div class="node node-b">Inteligencia</div><div class="node node-c">Operación</div></div></div></section>
+<section class="section docs" id="documentacion">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Documentación</span><h2>Biblioteca Técnica MVV.</h2><p>Documentación oficial de soluciones tecnológicas y capacidades operativas.</p></div>
+    <div class="family-title reveal"><span>TSB</span><div><h3>Technical Solution Briefs</h3><p>Documentación técnica de las soluciones tecnológicas MVV.</p></div></div>
+    <div class="docs-grid">
+      <a class="doc-card reveal" data-doc="tsb101" href="#"><img src="assets/images/sentinel-air.jpg" alt="TSB-101 MVV Sentinel Air"><div><span>Technical Solution Brief</span><h3>TSB-101 · Sentinel Air</h3><p>Plataforma aérea autónoma para vigilancia y coordinación operativa.</p></div></a>
+      <a class="doc-card reveal" data-doc="tsb102" href="#"><img src="assets/images/connect.jpg" alt="TSB-102 MVV NOSSACEL Connect"><div><span>Technical Solution Brief</span><h3>TSB-102 · NOSSACEL Connect</h3><p>Comunicaciones inteligentes para infraestructura crítica.</p></div></a>
+      <a class="doc-card reveal" data-doc="tsb103" href="#"><img src="assets/images/mobile-command.jpg" alt="TSB-103 MVV Command Mobile"><div><span>Technical Solution Brief</span><h3>TSB-103 · Command Mobile</h3><p>Centro de comando y control móvil para operaciones críticas.</p></div></a>
+    </div>
+    <div class="family-title operational reveal"><span>OCB</span><div><h3>Operational Capability Briefs</h3><p>Documentación oficial de capacidades operativas MVV.</p></div></div>
+    <div class="docs-grid">
+      <a class="doc-card reveal" data-doc="ocb201" href="#"><img src="assets/images/sentinel-tactical.jpg" alt="OCB-201 MVV Sentinel Tactical"><div><span>Operational Capability Brief</span><h3>OCB-201 · Sentinel Tactical</h3><p>Vigilancia temporal e infraestructura crítica.</p></div></a>
+      <a class="doc-card reveal" data-doc="ocb202" href="#"><img src="assets/images/sentinel-command.jpg" alt="OCB-202 MVV Sentinel Command"><div><span>Operational Capability Brief</span><h3>OCB-202 · Sentinel Command</h3><p>Mando, control y coordinación operativa integral.</p></div></a>
+    </div>
+    <div class="family-title reveal"><span>03</span><div><h3>Propuestas vigentes</h3><p>Información técnica y comercial de referencia.</p></div></div>
+    <div class="docs-grid">
+      <a class="doc-card reveal" data-doc="technical" href="#"><img src="assets/images/thumb_Propuesta_Tecnica_MVV_Sentinel.jpg" alt="Propuesta técnica"><div><span>Propuesta</span><h3>Propuesta Técnica</h3><p>Arquitectura, alcance y capacidad operativa.</p></div></a>
+      <a class="doc-card reveal" data-doc="commercial" href="#"><img src="assets/images/thumb_Propuesta_Comercial_MVV_Sentinel.jpg" alt="Propuesta comercial"><div><span>Propuesta</span><h3>Propuesta Comercial</h3><p>Configuraciones, inversión y condiciones.</p></div></a>
+    </div>
+  </div>
+</section>
 
-<section class="section section-soft" id="presupuesto"><div class="container"><div class="section-heading reveal"><p class="eyebrow">Propuesta económica</p><h2>Configuraciones escalables conforme al alcance operativo.</h2><p>Las configuraciones pueden evolucionar según las necesidades del proyecto. Los importes y condiciones corresponden a la propuesta comercial incluida en esta versión.</p></div><div class="pricing-grid" id="pricing-grid"></div><div class="commercial-conditions reveal"><span><strong>Vigencia</strong>30 días naturales</span><span><strong>Implementación</strong>Se define tras orden de compra</span><span><strong>Garantía</strong>Equipos según fabricante + integración MVV</span><span><strong>Soporte</strong>Mesa de ayuda incluida por 1 mes</span></div><p class="budget-disclaimer reveal">Los precios no incluyen IVA. El alcance final, logística, adecuaciones y condiciones de implementación deberán confirmarse mediante revisión técnica y comercial.</p><a class="btn btn-primary reveal" data-doc="commercial" target="_blank" rel="noopener">Abrir propuesta comercial completa</a></div></section>
-
-<section class="section" id="documentacion"><div class="container"><div class="section-heading reveal"><p class="eyebrow">Documentación</p><h2>Información técnica y comercial disponible.</h2><p>Los documentos se abren en una pestaña nueva. Para actualizar cualquiera de ellos en GitHub, sustituya el PDF conservando exactamente el mismo nombre.</p></div><div class="docs-grid"><a class="doc-card reveal" data-doc="technical" target="_blank" rel="noopener"><img src="assets/images/thumb_Propuesta_Tecnica_MVV_Sentinel.jpg" alt="Vista previa de propuesta técnica"><div><span>PROPUESTA TÉCNICA</span><h3>MVV Sentinel</h3><p>Arquitectura, ciclo operativo y componentes.</p><b>Abrir documento →</b></div></a><a class="doc-card reveal" data-doc="commercial" target="_blank" rel="noopener"><img src="assets/images/thumb_Propuesta_Comercial_MVV_Sentinel.jpg" alt="Vista previa de propuesta comercial"><div><span>PROPUESTA COMERCIAL</span><h3>Configuraciones y precios</h3><p>Alcance, inversión y condiciones comerciales.</p><b>Abrir documento →</b></div></a><a class="doc-card reveal" data-doc="fotokite" target="_blank" rel="noopener"><img src="assets/images/thumb_Fotokite_Datasheet.jpg" alt="Vista previa de ficha Fotokite"><div><span>FICHA TÉCNICA</span><h3>Sentinel Air · Fotokite</h3><p>Operación prolongada y perspectiva elevada.</p><b>Abrir documento →</b></div></a><a class="doc-card reveal" data-doc="c2" target="_blank" rel="noopener"><img src="assets/images/thumb_C2_Movil_Datasheet.jpg" alt="Vista previa de unidad móvil"><div><span>FICHA TÉCNICA</span><h3>Command Mobile</h3><p>Conversión y equipamiento de la unidad C2.</p><b>Abrir documento →</b></div></a></div></div></section>
-
-<section class="section cta section-dark" id="contacto"><div class="container contact-layout"><div class="contact-message reveal"><p class="eyebrow">Gracias</p><h2>Gracias por su tiempo.</h2><p class="closing-main">Agradecemos la oportunidad de presentar las soluciones de <strong>MVV Soluciones Integrales</strong>.</p><p>Nuestro equipo queda a su disposición para ampliar cualquier información técnica, operativa o económica y acompañarlos en el diseño de la solución que mejor responda a sus necesidades.</p><h3>Será un gusto colaborar con ustedes.</h3><div class="contact-actions"><a class="btn btn-primary" id="email-link">Enviar correo</a><a class="btn btn-ghost" id="whatsapp-link" target="_blank" rel="noopener">Abrir WhatsApp</a></div></div><aside class="contact-profile reveal" id="contact-profile"><div class="contact-identity"><p>CONTACTO DIRECTO</p><h3 id="contact-name">Carlos Vázquez</h3><span id="contact-title">Director Comercial</span><b>MVV Soluciones Integrales</b></div><div class="qr-wrap"><img id="contact-qr" src="assets/images/qr-carlos-vazquez.png" alt="Código QR para guardar el contacto de Carlos Vázquez"><small>Escanee para guardar el contacto</small></div><div class="contact-data"><a id="phone-link"></a><a id="contact-email"></a><a id="website-link" target="_blank" rel="noopener"></a></div><a class="save-contact" id="vcard-link" download>Guardar contacto (.vcf)</a></aside></div></section>
+<section class="section contact" id="contacto">
+  <div class="container contact-grid">
+    <div class="reveal"><span class="eyebrow light">Contacto</span><h2>Hablemos de su próximo proyecto.</h2><p>Diseñemos una solución alineada con sus necesidades operativas, técnicas y presupuestales.</p><div class="contact-actions"><a class="btn btn-white" href="mailto:informes@mvv.com.mx">Enviar correo</a><a class="btn btn-outline-white" id="whatsapp" href="#">WhatsApp</a></div></div>
+    <div class="contact-card reveal"><div class="person"><h3>Carlos Vázquez</h3><span>MVV Soluciones Integrales</span><a href="tel:+525526544462">+52 55 2654 4462</a><a href="mailto:informes@mvv.com.mx">informes@mvv.com.mx</a><a href="https://www.mvv.com.mx" target="_blank" rel="noopener">www.mvv.com.mx</a></div><div class="qr"><img src="assets/images/qr-carlos-vazquez.png" alt="Código QR de contacto"><span>Escanee para guardar el contacto</span><a href="assets/contact/Carlos_Vazquez_MVV.vcf" download>Descargar vCard</a></div></div>
+  </div>
+</section>
 </main>
-<footer><div class="container"><span>© <span id="year"></span> MVV Soluciones Integrales</span><span>MVV Experience 2.1 Stable</span></div></footer>
-<script src="config.js"></script><script src="assets/js/app.js"></script>
-</body></html>
+
+<footer><div class="container"><img src="assets/images/mvv-logo.svg" alt="MVV"><p>Capacidades Operativas para Infraestructura Crítica y Seguridad Pública.</p><span>© 2026 MVV Soluciones Integrales · Experience 3.1.2</span></div></footer>
+<script src="config.js"></script><script src="script.js"></script>
+</body>
+</html>

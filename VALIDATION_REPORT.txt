@@ -1,0 +1,8 @@
+MVV EXPERIENCE 3.2 — VALIDATION REPORT
+Fecha: 2026-07-30
+
+Referencias locales verificadas: 19
+Referencias faltantes: 0
+Imágenes oficiales integradas: 5
+
+Resultado: APROBADO — sin referencias locales rotas.

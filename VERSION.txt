@@ -1,2 +1,3 @@
-MVV EXPERIENCE 2.1 STABLE
-Fecha: 2026-07-29
+MVV Experience 3.2
+Operational Identity Edition
+Release: 2026-07-30
