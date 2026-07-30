@@ -4,7 +4,9 @@ N:Vázquez;Carlos;;;
 FN:Carlos Vázquez
 ORG:MVV Soluciones Integrales
 TITLE:Director Comercial
-TEL;TYPE=CELL,VOICE,WHATSAPP:+525543708747
+TEL;TYPE=CELL,VOICE:+525543708747
+TEL;TYPE=CELL,WHATSAPP:+525543708747
 EMAIL;TYPE=INTERNET,WORK:carlos.vazquez@mvv.com.mx
 URL:https://mvv.com.mx
+NOTE:MVV Soluciones Integrales - Seguridad, inteligencia y tecnología.
 END:VCARD

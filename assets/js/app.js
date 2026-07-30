@@ -1,58 +1,24 @@
+(() => {
+  const cfg = window.MVV_CONFIG || {};
+  const header = document.querySelector('#site-header');
+  const menu = document.querySelector('#nav-menu');
+  const toggle = document.querySelector('.nav-toggle');
+  const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  toggle?.addEventListener('click', () => { const open = menu.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+  document.querySelectorAll('.nav-link-button').forEach(btn => btn.addEventListener('click', () => btn.closest('.nav-item')?.classList.toggle('open')));
+  document.querySelectorAll('#nav-menu a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('open')); }));
 
-document.addEventListener("DOMContentLoaded", () => {
-  const cfg = window.MVV_CONFIG;
-  const $ = (s, el=document) => el.querySelector(s);
-  const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+  document.querySelectorAll('[data-doc]').forEach(el => { const key = el.dataset.doc; if (cfg.docs?.[key]) el.href = cfg.docs[key]; });
+  const pricingGrid = document.querySelector('#pricing-grid');
+  (cfg.pricing || []).forEach(item => { const article = document.createElement('article'); article.className = `price-card reveal${item.recommended ? ' recommended' : ''}`; article.innerHTML = `${item.recommended ? '<span class="badge">RECOMENDADA</span>' : ''}<p class="eyebrow">Configuración</p><h3>${item.name}</h3><p>${item.subtitle}</p><div class="price">${item.price}</div><ul>${item.scope.map(x => `<li>${x}</li>`).join('')}</ul>`; pricingGrid?.appendChild(article); });
 
-  $("#company-name").textContent = cfg.company.name;
-  $("#company-tagline").textContent = cfg.company.tagline;
+  const c = cfg.contact || {}, co = cfg.company || {};
+  const setText=(s,v)=>{const e=document.querySelector(s);if(e)e.textContent=v||''};
+  const setHref=(s,v)=>{const e=document.querySelector(s);if(e)e.href=v||'#'};
+  setText('#contact-name',c.name); setText('#contact-title',c.title); setText('#phone-link',c.phone); setHref('#phone-link',`tel:${c.phoneRaw}`); setText('#contact-email',c.email); setHref('#contact-email',`mailto:${c.email}`); setText('#website-link',co.websiteLabel); setHref('#website-link',co.website); setHref('#whatsapp-link',c.whatsapp); setHref('#email-link',`mailto:${c.email}?subject=Solicitud%20de%20información%20-%20MVV%20Soluciones%20Integrales`); setHref('#vcard-link',c.vcard); const qr=document.querySelector('#contact-qr'); if(qr&&c.qr)qr.src=c.qr;
 
-  const products = $("#products");
-  cfg.products.forEach((p, i) => {
-    const article = document.createElement("article");
-    article.className = "product reveal";
-    article.id = p.id;
-    article.innerHTML = `
-      <div class="product-media"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
-      <div class="product-body">
-        <div class="eyebrow">${p.kicker}</div>
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <div class="chips">${p.capabilities.map(c => `<span class="chip">${c}</span>`).join("")}</div>
-      </div>`;
-    products.appendChild(article);
-  });
-
-  const docs = $("#docs");
-  cfg.documents.forEach(d => {
-    const a = document.createElement("a");
-    a.className = "doc reveal";
-    a.href = d.file;
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.innerHTML = `<div><small>${d.type}</small><strong>${d.title}</strong></div><span aria-hidden="true">↗</span>`;
-    docs.appendChild(a);
-  });
-
-  $("#contact-name").textContent = cfg.contact.name;
-  $("#contact-title").textContent = cfg.contact.title;
-  $("#contact-phone").textContent = cfg.contact.phoneDisplay;
-  $("#contact-phone").href = `tel:${cfg.contact.phoneE164}`;
-  $("#contact-email").textContent = cfg.contact.email;
-  $("#contact-email").href = `mailto:${cfg.contact.email}`;
-  $("#contact-web").textContent = "mvv.com.mx";
-  $("#contact-web").href = cfg.company.website;
-  $("#whatsapp").href = `https://wa.me/${cfg.contact.phoneE164.replace("+","")}?text=${encodeURIComponent(cfg.contact.whatsappMessage)}`;
-
-  const nav = $(".nav");
-  addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20));
-  $(".menu-btn").addEventListener("click", () => $(".nav-links").classList.toggle("open"));
-  $$(".nav-links a").forEach(a => a.addEventListener("click", () => $(".nav-links").classList.remove("open")));
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting && e.target.classList.add("visible"));
-  }, {threshold: .12});
-  $$(".reveal").forEach(el => io.observe(el));
-
-  $("#year").textContent = new Date().getFullYear();
-});
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const year=document.querySelector('#year'); if(year)year.textContent=new Date().getFullYear();
+})();

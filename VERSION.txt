@@ -1,3 +1,2 @@
-MVV Experience 2.1 Stable Oficial
-Build: 2026-07-29
-Target: GitHub Pages
+MVV EXPERIENCE 2.1 STABLE
+Fecha: 2026-07-29
