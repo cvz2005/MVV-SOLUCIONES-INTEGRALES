@@ -44,6 +44,7 @@ window.MVV_CONFIG = {
     technical: "assets/docs/Propuesta_Tecnica_MVV_Sentinel.pdf",
     commercial: "assets/docs/Propuesta_Comercial_MVV_Sentinel.pdf",
     fotokite: "assets/docs/Fotokite_Datasheet.pdf",
-    c2: "assets/docs/C2_Movil_Datasheet.pdf"
+    c2: "assets/docs/C2_Movil_Datasheet.pdf",
+    connect: "assets/docs/IoT_Servicios_260724_143917.pdf"
   }
 };
