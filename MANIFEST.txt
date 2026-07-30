@@ -1,19 +1,21 @@
-index.html
-config.js
-README.md
-VERSION.txt
-assets/css/styles.css
-assets/js/app.js
-assets/images/image_1.jpg
-assets/images/image_2.jpg
-assets/images/image_3.jpg
-assets/images/image_4.jpg
-assets/images/image_5.jpg
-assets/images/thumb_Propuesta_Tecnica_MVV_Sentinel.jpg
-assets/images/thumb_Propuesta_Comercial_MVV_Sentinel.jpg
-assets/images/thumb_Fotokite_Datasheet.jpg
-assets/images/thumb_C2_Movil_Datasheet.jpg
-assets/docs/Propuesta_Tecnica_MVV_Sentinel.pdf
-assets/docs/Propuesta_Comercial_MVV_Sentinel.pdf
-assets/docs/Fotokite_Datasheet.pdf
-assets/docs/C2_Movil_Datasheet.pdf
+MVV EXPERIENCE 2.1 STABLE OFICIAL — MANIFEST
+
+.nojekyll | 0 bytes | sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+404.html | 123 bytes | sha256:290bdc75a8334d822c9af7e1023f8e841cef7ced89933977fcd3fc952f2e6c46
+README.md | 590 bytes | sha256:8b264dd133da7fc719471355a22b2f193d8c37abb391f1f4177207bab7b1d4c9
+VERSION.txt | 73 bytes | sha256:ffb870d40121cc4681f7f6d5c52c00bf28b6c7c86c618976af3af7383f898136
+assets/contact/Carlos_Vazquez_MVV.vcf | 246 bytes | sha256:2cc57ea19b186bd2470b2fd4cc5e167a5dfbf57e1f61c43bc85931bebb70abcc
+assets/css/styles.css | 7142 bytes | sha256:6c018532395078ecca8f9886ee7dd6d162deea95e5c7b4a9a8cb4edb9e3ed974
+assets/docs/C2_Movil_Datasheet.pdf | 1362831 bytes | sha256:dbabaaf5c89094e79f4090c90dfb39d5be291747fd1a0a1c1b1cc01f79d7032f
+assets/docs/Fotokite_Datasheet.pdf | 135476 bytes | sha256:f4f0de705b1893b909a6008e7847912bddee62f2cbb83bdc90262d0d1c64b221
+assets/docs/Propuesta_Comercial_MVV_Sentinel.pdf | 694826 bytes | sha256:1fbdb994880f4e1cea66b4ef69a449d2780c53f95f2aa77a441131c55a2ebf34
+assets/docs/Propuesta_Tecnica_MVV_Sentinel.pdf | 2142726 bytes | sha256:f4da5157eeec4a253f61e42d1c403f19446af690ca6b0ce0308dbfdb6a06dbbe
+assets/images/c11.svg | 1734 bytes | sha256:3f532ca1dabf15599b5bc8d6447b2ae32f877ea1c17590f2f1cf55ef7e5f681a
+assets/images/command-mobile.svg | 1895 bytes | sha256:1218f05cb13fb9ce9b4600dcb8d4425a2e1209c520e415d2c8c0191dbe18f61d
+assets/images/mvv-logo.svg | 756 bytes | sha256:6d345bfa77631719a76d256ed262282d9fad40981cdd98e87b78e8a715b36f28
+assets/images/qr-carlos-vazquez.png | 10860 bytes | sha256:ae34e6be9698a9527cf61c777562e25236510cded59e925bed06c4fb9ea86266
+assets/images/sentinel-air.svg | 1818 bytes | sha256:2a36e1227b5e92d166a1d0812b90c66b76e87ceb0a5edd7013d953bcfa6d4f4c
+assets/images/sentinel-connect.svg | 1814 bytes | sha256:c79cecf14c41d045d6b74ca76177557887c3762fb248d39280e7c8d62766822f
+assets/js/app.js | 2435 bytes | sha256:e242a1bf20b3be57d6a20ab1337d3bd6ddaa9c294f5ed48086a3dfaf917d2a06
+config.js | 2301 bytes | sha256:34230494c855be152d8868fb0e794ce154d6148fdc3e26d89b42d2f11b39588a
+index.html | 5709 bytes | sha256:1ed3dd0040e98537653d60767d76af24f79e03cd9b10db6183b8fa2608866e7f

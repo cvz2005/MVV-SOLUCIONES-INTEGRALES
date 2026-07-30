@@ -2,219 +2,102 @@
 <html lang="es-MX">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MVV Soluciones Integrales. Seguridad, inteligencia, comunicaciones y centros de comando para operaciones estratégicas.">
-  <meta name="theme-color" content="#061425">
-  <title>MVV | Soluciones Integrales de Seguridad e Inteligencia</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MVV Soluciones Integrales: infraestructura tecnológica para seguridad y operaciones críticas.">
+  <meta name="theme-color" content="#050a12">
+  <title>MVV Soluciones Integrales | Experience 2.1 Stable</title>
+  <link rel="icon" href="assets/images/mvv-logo.svg">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="config.js"></script>
+  <script defer src="assets/js/app.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#inicio" aria-label="MVV Soluciones Integrales"><img src="assets/images/mvv-logo.svg" alt="MVV Soluciones Integrales"></a>
+    <button class="menu-btn" aria-label="Abrir menú">Menú</button>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a><a href="#empresa">Quiénes somos</a><a href="#soluciones">Soluciones</a>
+      <a href="#c11">C11</a><a href="#documentacion">Documentación</a><a href="#gracias">Contacto</a>
+    </div>
+  </div>
+</nav>
 
-<header class="site-header" id="site-header">
-  <div class="nav container">
-    <a class="brand" href="#inicio" aria-label="MVV Inicio">
-      <span class="brand-mark">MVV</span>
-      <span class="brand-sub">Soluciones Integrales</span>
-    </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menú</button>
-    <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
-      <div class="nav-item">
-        <button class="nav-link-button" type="button">Inicio</button>
-        <div class="dropdown-menu">
-          <a href="#inicio">Portada</a>
-          <a href="#quienes-somos">Quiénes Somos</a>
-          <a href="#experiencia">Experiencia</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <button class="nav-link-button" type="button">Soluciones</button>
-        <div class="dropdown-menu">
-          <a href="#sentinel-air">MVV Sentinel Air</a>
-          <a href="#sentinel-command">MVV Sentinel Command Mobile</a>
-          <a href="#sentinel-connect">MVV Sentinel Connect</a>
-          <a href="#c11">C11 Seguridad Inteligente <span class="menu-status">En proceso</span></a>
-        </div>
-      </div>
-      <a href="#presupuesto">Presupuesto</a>
-      <a href="#documentacion">Documentación</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+<header id="inicio" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Tecnología para operaciones críticas</div>
+      <h1><span id="company-name">MVV Soluciones Integrales</span><br><span class="gradient">integra, conecta y responde.</span></h1>
+      <p id="company-tagline" class="lead">Infraestructura tecnológica para seguridad y operaciones críticas</p>
+      <div class="actions"><a class="btn primary" href="#soluciones">Explorar soluciones</a><a class="btn" href="#gracias">Contactar</a></div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orb"></div><div class="orb"></div><div class="orb"></div>
+      <div class="node air">Sentinel Air</div><div class="node command">Command Mobile</div><div class="node connect">Sentinel Connect</div>
+    </div>
   </div>
 </header>
 
-<main id="contenido">
-<section class="hero" id="inicio">
-  <div class="hero-backdrop" aria-hidden="true"></div>
-  <div class="hero-grid container">
-    <div class="hero-copy reveal">
-      <p class="eyebrow">Seguridad · Inteligencia · Tecnología</p>
-      <h1>Convertimos tecnología en <span>capacidad operativa.</span></h1>
-      <p class="hero-lead">MVV diseña, integra y acompaña soluciones críticas para elevar la conciencia situacional, la coordinación y la continuidad de las operaciones.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#soluciones">Explorar soluciones</a>
-        <a class="btn btn-ghost" href="#presupuesto">Ver propuesta</a>
-      </div>
-      <div class="hero-points"><span>Ingeniería especializada</span><span>Integración llave en mano</span><span>Soporte continuo</span></div>
-    </div>
-    <div class="hero-visual reveal">
-      <div class="hero-frame"><img src="assets/images/image_1.jpg" alt="Presentación visual de MVV Sentinel"></div>
-      <div class="hero-status"><i></i> Plataforma operativa integrada</div>
-    </div>
-  </div>
-  <a class="scroll-cue" href="#quienes-somos" aria-label="Continuar">Desplazar</a>
-</section>
-
-<section class="section" id="quienes-somos">
+<main>
+<section id="empresa">
   <div class="container">
-    <div class="section-heading reveal">
-      <p class="eyebrow">Quiénes Somos</p>
-      <h2>Un integrador tecnológico con visión operativa.</h2>
-      <p>MVV articula ingeniería, tecnología, implementación y acompañamiento para entregar soluciones completas, interoperables y preparadas para evolucionar.</p>
-    </div>
-    <div class="value-grid">
-      <article class="value-card reveal"><span>01</span><h3>Ingeniería</h3><p>Diseñamos arquitecturas alineadas con el entorno, el riesgo y la operación del cliente.</p></article>
-      <article class="value-card reveal"><span>02</span><h3>Integración</h3><p>Conectamos tecnologías y plataformas de fabricantes líderes bajo una sola solución.</p></article>
-      <article class="value-card reveal"><span>03</span><h3>Implementación</h3><p>Coordinamos suministro, configuración, pruebas, capacitación y puesta en marcha.</p></article>
-      <article class="value-card reveal"><span>04</span><h3>Continuidad</h3><p>Acompañamos la operación con soporte, mantenimiento y evolución tecnológica.</p></article>
+    <div class="section-head reveal"><h2>Una arquitectura institucional preparada para crecer.</h2><p>MVV Soluciones Integrales es la marca institucional. Bajo ella se presenta un portafolio de productos especializados que puede ampliarse sin perder coherencia, identidad ni claridad comercial.</p></div>
+    <div class="stats">
+      <div class="stat reveal"><strong>Integración</strong><span>Equipos, comunicaciones, video y operación bajo una sola visión.</span></div>
+      <div class="stat reveal"><strong>Continuidad</strong><span>Diseño orientado a mantener capacidades disponibles cuando más se necesitan.</span></div>
+      <div class="stat reveal"><strong>Escalabilidad</strong><span>Soluciones modulares para despliegues progresivos y futuras ampliaciones.</span></div>
     </div>
   </div>
 </section>
 
-<section class="section section-soft" id="experiencia">
-  <div class="container split">
+<section id="soluciones">
+  <div class="container">
+    <div class="section-head reveal"><h2>Tres productos. Una lógica operativa común.</h2><p>Air observa, Command Mobile coordina y Connect enlaza. Cada producto puede implementarse de forma independiente o integrarse dentro de una solución operativa más amplia.</p></div>
+    <div id="products" class="products"></div>
+  </div>
+</section>
+
+<section id="c11">
+  <div class="container">
+    <div class="c11 reveal">
+      <div class="c11-copy"><span class="badge">Próximamente</span><h3>C11 Seguridad Inteligente</h3><p>Solución en proceso de desarrollo para integrar capacidades de seguridad, operación, analítica, comunicaciones y coordinación bajo una arquitectura escalable.</p></div>
+      <img src="assets/images/c11.svg" alt="C11 Seguridad Inteligente próximamente" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="documentacion">
+  <div class="container">
+    <div class="section-head reveal"><h2>Documentación disponible.</h2><p>Los documentos se conservan como archivos independientes. Para actualizar una versión basta con reemplazar el PDF manteniendo el mismo nombre.</p></div>
+    <div id="docs" class="docs"></div>
+  </div>
+</section>
+
+<section id="gracias" class="closing">
+  <div class="container closing-grid">
     <div class="reveal">
-      <p class="eyebrow">Experiencia MVV</p>
-      <h2>Más que proveedores: integradores de capacidades críticas.</h2>
-      <p>La experiencia de MVV se concentra en infraestructura de seguridad, videovigilancia, comunicaciones, centros de control y soluciones llave en mano para entornos de alta exigencia.</p>
-      <blockquote>Un solo responsable para coordinar la solución completa.</blockquote>
+      <div class="eyebrow">Cierre institucional</div>
+      <h2>Gracias por su tiempo.</h2>
+      <p><strong>Agradecemos la oportunidad de presentar las soluciones de MVV Soluciones Integrales.</strong></p>
+      <p>Nuestro equipo queda a su disposición para ampliar cualquier información técnica, operativa o económica y acompañarlos en el diseño de la solución que mejor responda a sus necesidades.</p>
+      <p><strong>Será un gusto colaborar con ustedes.</strong></p>
+      <div class="signature"><strong id="contact-name">Carlos Vázquez</strong><span id="contact-title">Director Comercial</span><span>MVV Soluciones Integrales</span></div>
     </div>
-    <div class="metrics">
-      <div class="metric reveal"><strong data-count="4">0</strong><span>Pilares de integración</span></div>
-      <div class="metric reveal"><strong data-count="360">0</strong><span>Visión operativa</span></div>
-      <div class="metric reveal"><strong>24/7</strong><span>Enfoque de continuidad</span></div>
-      <div class="metric reveal"><strong>1</strong><span>Arquitectura integrada</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" id="soluciones">
-  <div class="container">
-    <div class="section-heading reveal">
-      <p class="eyebrow">Soluciones</p>
-      <h2>MVV Sentinel: una plataforma para captar, integrar, analizar y responder.</h2>
-      <p>Una arquitectura modular que conecta vigilancia aérea, comando móvil, comunicaciones y servicios especializados bajo una misma lógica operativa.</p>
-    </div>
-    <div class="architecture reveal" aria-label="Arquitectura MVV Sentinel">
-      <div class="architecture-line"></div>
-      <a href="#sentinel-air"><span>01</span><strong>Sentinel Air</strong><small>Visión aérea persistente</small></a>
-      <a href="#sentinel-command"><span>02</span><strong>Command Mobile</strong><small>Centro C2 en campo</small></a>
-      <a href="#sentinel-connect"><span>03</span><strong>Sentinel Connect</strong><small>Continuidad de comunicaciones</small></a>
-      <a href="#c11"><span>04</span><strong>C11</strong><small>En proceso</small></a>
-    </div>
-  </div>
-</section>
-
-<section class="section product-section" id="sentinel-air">
-  <div class="container product">
-    <div class="product-media reveal"><img src="assets/images/image_2.jpg" alt="Sistema aéreo persistente Fotokite"></div>
-    <div class="product-copy reveal">
-      <p class="eyebrow">MVV Sentinel Air</p>
-      <h2>Vigilancia aérea persistente, inmediata y conectada.</h2>
-      <p>Plataforma aérea cautiva orientada a ampliar la visibilidad operativa sin depender de ciclos tradicionales de vuelo. Su integración permite compartir video en tiempo real con el centro de comando.</p>
-      <ul><li>Despliegue simplificado</li><li>Operación prolongada</li><li>Video en tiempo real</li><li>Integración directa al C2</li></ul>
-      <a class="btn btn-outline" data-doc="fotokite" target="_blank" rel="noopener">Abrir ficha técnica</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section-soft product-section" id="sentinel-command">
-  <div class="container product reverse">
-    <div class="product-media reveal"><img src="assets/images/image_3.jpg" alt="Unidad móvil de comando y control"></div>
-    <div class="product-copy reveal">
-      <p class="eyebrow">MVV Sentinel Command Mobile</p>
-      <h2>Centro de comando móvil para coordinar decisiones en campo.</h2>
-      <p>Unidad C2 móvil sobre chasis Ford F-550, concebida como un espacio operativo independiente con visualización, comunicaciones, respaldo eléctrico, almacenamiento y equipamiento especializado.</p>
-      <ul><li>Cámara PTZ exterior con zoom óptico</li><li>Grabación y monitoreo multisitio</li><li>Conectividad 3G/4G, GPS y Wi-Fi</li><li>Estaciones de trabajo y visualización</li></ul>
-      <a class="btn btn-outline" data-doc="c2" target="_blank" rel="noopener">Abrir ficha técnica</a>
-    </div>
-  </div>
-</section>
-
-<section class="section product-section" id="sentinel-connect">
-  <div class="container product">
-    <div class="product-media reveal"><img src="assets/images/image_5.jpg" alt="Comunicaciones e integración operativa"></div>
-    <div class="product-copy reveal">
-      <p class="eyebrow">MVV Sentinel Connect</p>
-      <h2>Continuidad de comunicaciones e interoperabilidad.</h2>
-      <p>Arquitectura multioperador que fortalece el flujo de información entre campo, unidades móviles y centros de mando, con acompañamiento de integración, validación y soporte.</p>
-      <ul><li>Conectividad resiliente</li><li>Integración de video y datos</li><li>Administración centralizada</li><li>Capacitación y soporte especializado</li></ul>
-      <a class="btn btn-outline" data-doc="technical" target="_blank" rel="noopener">Ver arquitectura completa</a>
-    </div>
-  </div>
-</section>
-
-<section class="section c11-section section-dark" id="c11">
-  <div class="container c11-shell">
-    <div class="c11-copy reveal">
-      <p class="eyebrow">Próxima solución MVV</p>
-      <div class="status-pill"><i></i> En proceso</div>
-      <h2>C11 Seguridad Inteligente</h2>
-      <p class="c11-lead">La siguiente generación de soluciones para coordinación, inteligencia y operación integrada.</p>
-      <p>Este módulo se habilitará conforme avance su definición técnica, operativa y comercial.</p>
-      <div class="c11-progress"><span></span></div>
-      <small>Arquitectura, experiencia operativa e integración tecnológica en desarrollo.</small>
-    </div>
-    <div class="c11-visual reveal" aria-hidden="true">
-      <div class="radar ring-1"></div><div class="radar ring-2"></div><div class="radar ring-3"></div>
-      <div class="c11-core"><strong>C11</strong><span>Seguridad Inteligente</span></div>
-      <div class="node node-a">Coordinación</div><div class="node node-b">Inteligencia</div><div class="node node-c">Operación</div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-soft" id="presupuesto">
-  <div class="container">
-    <div class="section-heading reveal">
-      <p class="eyebrow">Presupuesto</p>
-      <h2>Configuraciones modulares según el nivel de operación.</h2>
-      <p>Los precios se administran desde <code>config.js</code>. Esto permite actualizar importes sin modificar el diseño.</p>
-    </div>
-    <div class="pricing-grid" id="pricing-grid"></div>
-    <div class="commercial-conditions reveal">
-      <span><strong>Vigencia</strong>30 días naturales</span>
-      <span><strong>Implementación</strong>Tras orden de compra</span>
-      <span><strong>Garantía</strong>Fabricante + integración MVV</span>
-      <span><strong>Soporte</strong>Mesa de ayuda inicial</span>
-    </div>
-    <p class="budget-disclaimer reveal">Propuesta económica preliminar. Los precios podrán ajustarse conforme al alcance definitivo del proyecto.</p>
-    <a class="btn btn-primary reveal" data-doc="commercial" target="_blank" rel="noopener">Abrir propuesta comercial completa</a>
-  </div>
-</section>
-
-<section class="section" id="documentacion">
-  <div class="container">
-    <div class="section-heading reveal"><p class="eyebrow">Documentación</p><h2>Centro documental técnico y comercial.</h2><p>Todos los archivos se encuentran dentro de <code>assets/docs</code> y pueden reemplazarse conservando el mismo nombre.</p></div>
-    <div class="docs-grid">
-      <a class="doc-card reveal" data-doc="technical" target="_blank" rel="noopener"><img src="assets/images/thumb_Propuesta_Tecnica_MVV_Sentinel.jpg" alt="Portada propuesta técnica"><div><span>PDF</span><h3>Propuesta técnica</h3><p>Arquitectura, ciclo operativo y capacidades MVV Sentinel.</p></div></a>
-      <a class="doc-card reveal" data-doc="commercial" target="_blank" rel="noopener"><img src="assets/images/thumb_Propuesta_Comercial_MVV_Sentinel.jpg" alt="Portada propuesta comercial"><div><span>PDF</span><h3>Propuesta comercial</h3><p>Configuraciones, inversión y condiciones comerciales.</p></div></a>
-      <a class="doc-card reveal" data-doc="fotokite" target="_blank" rel="noopener"><img src="assets/images/thumb_Fotokite_Datasheet.jpg" alt="Portada datasheet Fotokite"><div><span>PDF</span><h3>Datasheet Fotokite</h3><p>Operación persistente y despliegue simplificado.</p></div></a>
-      <a class="doc-card reveal" data-doc="c2" target="_blank" rel="noopener"><img src="assets/images/thumb_C2_Movil_Datasheet.jpg" alt="Portada datasheet C2 móvil"><div><span>PDF</span><h3>Datasheet C2 móvil</h3><p>Conversión vehicular, sistemas y equipamiento.</p></div></a>
-    </div>
-  </div>
-</section>
-
-<section class="cta section-dark" id="contacto">
-  <div class="container cta-grid reveal">
-    <div><p class="eyebrow">MVV Soluciones Integrales</p><h2>¿Hablamos de su proyecto?</h2><p>Diseñamos soluciones alineadas con el entorno, el alcance y las prioridades de cada operación.</p></div>
-    <div class="contact-card" id="contact-card"></div>
+    <aside class="contact-card reveal">
+      <img src="assets/images/qr-carlos-vazquez.png" alt="Código QR para guardar el contacto de Carlos Vázquez">
+      <strong>Escanee para guardar el contacto</strong>
+      <div class="contact-list">
+        <a id="contact-phone" href="#">55 4370 8747</a>
+        <a id="contact-email" href="#">carlos.vazquez@mvv.com.mx</a>
+        <a id="contact-web" href="#" target="_blank" rel="noopener">mvv.com.mx</a>
+      </div>
+      <a class="btn primary" href="assets/contact/Carlos_Vazquez_MVV.vcf" download>Guardar contacto</a>
+      <a id="whatsapp" class="btn" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+    </aside>
   </div>
 </section>
 </main>
 
-<footer><div class="container"><span>© <span id="year"></span> MVV Soluciones Integrales</span><span>MVV Experience 2.0 Stable</span></div></footer>
-
-<script src="config.js"></script>
-<script src="assets/js/app.js"></script>
+<footer><div class="container">© <span id="year"></span> MVV Soluciones Integrales · MVV Experience 2.1 Stable Oficial</div></footer>
 </body>
 </html>

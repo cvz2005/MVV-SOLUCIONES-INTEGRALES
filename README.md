@@ -1,21 +1,18 @@
-# MVV Experience 2.0 Stable
+# MVV Experience 2.1 Stable Oficial
 
-Sitio web estático, modular y listo para GitHub Pages.
+Sitio institucional estático para **MVV Soluciones Integrales**, compatible con GitHub Pages.
 
 ## Publicación
-1. Suba a la raíz del repositorio: `index.html`, `config.js`, `README.md` y la carpeta `assets`.
-2. En GitHub: Settings → Pages → Deploy from a branch → `main` → `/(root)`.
-3. Guarde y espere el despliegue.
+1. Descomprima el ZIP.
+2. Suba **el contenido** a la raíz de la rama `main`.
+3. En GitHub: Settings → Pages → Deploy from a branch → `main` / `(root)`.
+4. Espere a que el workflow de Pages termine.
 
-## Cambios frecuentes
-- Precios y contacto: edite `config.js`.
-- Colores y diseño: edite `assets/css/styles.css`.
-- Interacciones: edite `assets/js/app.js`.
-- Documentos: reemplace los PDF en `assets/docs` conservando los nombres.
-- Imágenes: reemplace archivos en `assets/images` y conserve el nombre o actualice la ruta en `index.html`.
+## Actualización
+- Datos y productos: `config.js`
+- Estilos: `assets/css/styles.css`
+- Comportamiento: `assets/js/app.js`
+- Documentos: `assets/docs/`
+- Contacto: `assets/contact/Carlos_Vazquez_MVV.vcf`
 
-## Archivos principales
-- `index.html`: estructura y contenido.
-- `config.js`: precios, contacto y rutas de PDF.
-- `assets/css/styles.css`: apariencia.
-- `assets/js/app.js`: menú, animaciones y contenido dinámico.
+La raíz incluye `.nojekyll`.

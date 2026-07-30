@@ -1,45 +1,47 @@
-/* ============================================================
-   MVV EXPERIENCE 2.0 — CONFIGURACIÓN CENTRAL
-   Modifique aquí precios, datos de contacto y rutas de archivos.
-   No es necesario editar index.html para estos cambios.
-   ============================================================ */
-
 window.MVV_CONFIG = {
   company: {
     name: "MVV Soluciones Integrales",
-    email: "informes@mvv.com.mx",
-    phone1: "+52 55 2654 4462",
-    phone2: "+52 55 4370 8747",
-    website: "www.mvv.com.mx",
-    location: "Ciudad de México, México"
+    tagline: "Infraestructura tecnológica para seguridad y operaciones críticas",
+    website: "https://mvv.com.mx"
   },
-  pricing: [
+  contact: {
+    name: "Carlos Vázquez",
+    title: "Director Comercial",
+    phoneDisplay: "55 4370 8747",
+    phoneE164: "+525543708747",
+    email: "carlos.vazquez@mvv.com.mx",
+    whatsappMessage: "Hola Carlos, me gustaría conocer más sobre las soluciones de MVV."
+  },
+  products: [
     {
-      name: "MVV Sentinel Tactical",
-      subtitle: "Sentinel Air + Connect + Services",
-      price: "$1,720,000.00 + IVA",
-      scope: ["Vigilancia aérea persistente", "Conectividad móvil", "Integración, capacitación y soporte"],
-      recommended: false
+      id: "air",
+      name: "MVV Sentinel Air",
+      kicker: "Vigilancia aérea persistente",
+      description: "Capacidad de observación elevada y continua para ampliar la conciencia situacional en eventos, perímetros y operaciones críticas.",
+      image: "assets/images/sentinel-air.svg",
+      capabilities: ["Observación persistente", "Despliegue táctico", "Video para coordinación operativa"]
     },
     {
-      name: "MVV Sentinel Command",
-      subtitle: "Tactical + Sentinel Command Mobile",
-      price: "$12,872,000.00 + IVA",
-      scope: ["Incluye unidad Ford F-550 2026", "Centro C2 móvil", "Integración y puesta en operación"],
-      recommended: true
+      id: "command",
+      name: "MVV Sentinel Command Mobile",
+      kicker: "Comando y coordinación en campo",
+      description: "Centro móvil diseñado para concentrar información, coordinar recursos y sostener la operación cerca del punto de intervención.",
+      image: "assets/images/command-mobile.svg",
+      capabilities: ["Puesto de mando móvil", "Integración de video y comunicaciones", "Coordinación interinstitucional"]
     },
     {
-      name: "MVV Sentinel Enterprise",
-      subtitle: "Arquitectura integral y evolución tecnológica",
-      price: "Requiere análisis de proyecto",
-      scope: ["Infraestructura crítica", "Operaciones permanentes", "Diseño a la medida"],
-      recommended: false
+      id: "connect",
+      name: "MVV Sentinel Connect",
+      kicker: "Conectividad crítica interoperable",
+      description: "Capa de comunicaciones para enlazar personal, unidades, sensores y centros de mando bajo una misma lógica operativa.",
+      image: "assets/images/sentinel-connect.svg",
+      capabilities: ["Interoperabilidad", "Enlaces de respaldo", "Integración de activos distribuidos"]
     }
   ],
-  docs: {
-    technical: "assets/docs/Propuesta_Tecnica_MVV_Sentinel.pdf",
-    commercial: "assets/docs/Propuesta_Comercial_MVV_Sentinel.pdf",
-    fotokite: "assets/docs/Fotokite_Datasheet.pdf",
-    c2: "assets/docs/C2_Movil_Datasheet.pdf"
-  }
+  documents: [
+    { title: "Propuesta técnica MVV Sentinel", file: "assets/docs/Propuesta_Tecnica_MVV_Sentinel.pdf", type: "Propuesta técnica" },
+    { title: "Propuesta comercial MVV Sentinel", file: "assets/docs/Propuesta_Comercial_MVV_Sentinel.pdf", type: "Propuesta económica" },
+    { title: "Ficha técnica Fotokite", file: "assets/docs/Fotokite_Datasheet.pdf", type: "Ficha técnica" },
+    { title: "Ficha técnica C2 Mobile", file: "assets/docs/C2_Movil_Datasheet.pdf", type: "Ficha técnica" }
+  ]
 };
