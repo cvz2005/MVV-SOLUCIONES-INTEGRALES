@@ -3,7 +3,7 @@ window.MVV_CONFIG = {
   cacheVersion: '3.4',
 
   visibility: {
-    showPrices: true,
+    showPrices: false,
     showCurrentProposals: false,
     showTSB: true,
     showOCB: true,
