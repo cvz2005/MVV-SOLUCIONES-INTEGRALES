@@ -1,0 +1,11 @@
+MVV EXPERIENCE 3.4 — VALIDATION REPORT
+Fecha: 2026-08-04
+
+- config.js: sintaxis válida
+- script.js: sintaxis válida
+- Referencias locales faltantes: 0
+- showPrices: implementado y funcional
+- showCurrentProposals: implementado y funcional
+- Controles adicionales de visibilidad: implementados
+
+Resultado: APROBADO

@@ -1,50 +1,140 @@
 (() => {
+  'use strict';
+
   const config = window.MVV_CONFIG || {};
+  const visibility = config.visibility || {};
   const cacheVersion = config.cacheVersion || config.version || '1';
+
   const appendVersion = (url) => {
-    if (!url || /^(https?:|mailto:|tel:|#)/i.test(url)) return url;
+    if (!url || /^(https?:|mailto:|tel:|#|data:)/i.test(url)) return url;
     return `${url}${url.includes('?') ? '&' : '?'}v=${encodeURIComponent(cacheVersion)}`;
   };
+
+  const setVisible = (selectorOrElement, visible) => {
+    const el = typeof selectorOrElement === 'string'
+      ? document.querySelector(selectorOrElement)
+      : selectorOrElement;
+    if (el) el.hidden = !visible;
+  };
+
   const setText = (selector, value) => {
     const el = document.querySelector(selector);
     if (el && value !== undefined && value !== null) el.textContent = value;
   };
+
+  // Texto configurable mediante data-bind="ruta.al.valor".
   document.querySelectorAll('[data-bind]').forEach((el) => {
     let value = config;
     for (const key of el.dataset.bind.split('.')) value = value?.[key];
     if (value !== undefined && value !== null) el.textContent = value;
   });
+
+  // Documentos configurables y versionados para evitar caché.
   document.querySelectorAll('[data-doc]').forEach((link) => {
     const url = config.docs?.[link.dataset.doc];
-    if (url) { link.href = appendVersion(url); link.target = '_blank'; link.rel = 'noopener'; }
+    if (!url) return;
+    link.href = appendVersion(url);
+    link.target = '_blank';
+    link.rel = 'noopener';
   });
-  const proposals = document.getElementById('current-proposals');
-  if (proposals) proposals.hidden = config.visibility?.showCurrentProposals !== true;
+
+  // Visibilidad de módulos.
+  setVisible('#current-proposals', visibility.showCurrentProposals === true);
+  setVisible('#contacto', visibility.showContact !== false);
+  setVisible('#c11', visibility.showC11 !== false);
+  setVisible('.commercial-note', visibility.showCommercialNote !== false);
+  setVisible('#whatsapp', visibility.showWhatsapp !== false);
+  setVisible('#email-button', visibility.showEmailButton !== false);
+  setVisible('#contact-website', visibility.showWebsite !== false);
+  setVisible('#contact-vcard', visibility.showVcard !== false);
+
   const tsbFamily = document.querySelector('.docs .family-title:not(.operational)');
   const tsbGrid = tsbFamily?.nextElementSibling;
-  if (config.visibility?.showTSB === false) { if (tsbFamily) tsbFamily.hidden = true; if (tsbGrid) tsbGrid.hidden = true; }
+  if (visibility.showTSB === false) {
+    setVisible(tsbFamily, false);
+    setVisible(tsbGrid, false);
+  }
+
   const ocbFamily = document.querySelector('.docs .family-title.operational');
   const ocbGrid = ocbFamily?.nextElementSibling;
-  if (config.visibility?.showOCB === false) { if (ocbFamily) ocbFamily.hidden = true; if (ocbGrid) ocbGrid.hidden = true; }
-  const contactSection = document.getElementById('contacto');
-  if (contactSection && config.visibility?.showContact === false) contactSection.hidden = true;
-  if (config.visibility?.showPrices === false) {
-    document.querySelectorAll('.investment').forEach((box) => { box.innerHTML = `<small>${config.prices?.hiddenMessage || 'Inversión bajo consulta'}</small>`; });
+  if (visibility.showOCB === false) {
+    setVisible(ocbFamily, false);
+    setVisible(ocbGrid, false);
   }
+
+  // Precios: se conservan las tarjetas, pero se sustituyen los importes por un mensaje.
+  if (visibility.showPrices === false) {
+    document.querySelectorAll('.investment').forEach((box) => {
+      box.classList.add('price-hidden');
+      box.innerHTML = `<small>${config.prices?.hiddenMessage || 'Inversión bajo consulta'}</small>`;
+    });
+  }
+
+  // Contacto.
   const c = config.contact || {};
-  setText('#contact-name', c.name); setText('#contact-company', c.company); setText('#contact-phone', c.phoneDisplay); setText('#contact-email', c.email); setText('#contact-website', c.websiteDisplay);
-  const phone = document.getElementById('contact-phone'); if (phone && c.phoneLink) phone.href = `tel:${c.phoneLink}`;
-  const email = document.getElementById('contact-email'); if (email && c.email) email.href = `mailto:${c.email}`;
-  const emailButton = document.getElementById('email-button'); if (emailButton && c.email) emailButton.href = `mailto:${c.email}`;
-  const website = document.getElementById('contact-website'); if (website && c.websiteUrl) website.href = c.websiteUrl;
-  const vcard = document.getElementById('contact-vcard'); if (vcard && c.vcard) vcard.href = appendVersion(c.vcard);
+  setText('#contact-name', c.name);
+  setText('#contact-company', c.company);
+  setText('#contact-phone', c.phoneDisplay);
+  setText('#contact-email', c.email);
+  setText('#contact-website', c.websiteDisplay);
+
+  const phone = document.getElementById('contact-phone');
+  if (phone && c.phoneLink) phone.href = `tel:${c.phoneLink}`;
+
+  const email = document.getElementById('contact-email');
+  if (email && c.email) email.href = `mailto:${c.email}`;
+
+  const emailButton = document.getElementById('email-button');
+  if (emailButton && c.email) emailButton.href = `mailto:${c.email}`;
+
+  const website = document.getElementById('contact-website');
+  if (website && c.websiteUrl) website.href = c.websiteUrl;
+
+  const vcard = document.getElementById('contact-vcard');
+  if (vcard && c.vcard) vcard.href = appendVersion(c.vcard);
+
   const wa = document.getElementById('whatsapp');
-  if (wa && c.whatsapp) { wa.href = `https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappMessage || 'Hola, me interesa conocer las soluciones MVV.')}`; wa.target = '_blank'; wa.rel = 'noopener'; }
-  document.querySelectorAll('img[src]').forEach((img) => { const src = img.getAttribute('src'); if (src && !src.includes('?v=') && !/^(https?:|data:)/i.test(src)) img.src = appendVersion(src); });
-  const toggle = document.querySelector('.menu-toggle'); const nav = document.querySelector('.main-nav');
-  toggle?.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
-  document.querySelector('.nav-dropdown > button')?.addEventListener('click', (e) => { if (window.innerWidth <= 980) e.currentTarget.parentElement.classList.toggle('open'); });
-  document.querySelectorAll('.main-nav a').forEach((a) => a.addEventListener('click', () => nav.classList.remove('open')));
-  const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  if (wa && c.whatsapp) {
+    wa.href = `https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappMessage || 'Hola, me interesa conocer las soluciones MVV.')}`;
+    wa.target = '_blank';
+    wa.rel = 'noopener';
+  }
+
+  // Versionado automático de imágenes locales.
+  document.querySelectorAll('img[src]').forEach((img) => {
+    const src = img.getAttribute('src');
+    if (src && !src.includes('?v=') && !/^(https?:|data:)/i.test(src)) {
+      img.src = appendVersion(src);
+    }
+  });
+
+  // Menú y animaciones.
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  toggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  document.querySelector('.nav-dropdown > button')?.addEventListener('click', (e) => {
+    if (window.innerWidth <= 980) e.currentTarget.parentElement.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.main-nav a').forEach((a) => {
+    a.addEventListener('click', () => nav.classList.remove('open'));
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+  }
 })();

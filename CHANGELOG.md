@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.4 — Configuration Edition
+- Panel de configuración funcional desde `config.js`.
+- Corrección y validación de `showPrices`.
+- Controles adicionales para módulos y contacto.
+- Manual ampliado y versionado de caché.
+
+
 ## 3.3 — Professional Edition
 - Configuración centralizada, Biblioteca Técnica y manual de mantenimiento.
 
