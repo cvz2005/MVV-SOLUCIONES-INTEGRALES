@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3 — Professional Edition
+- Configuración centralizada, Biblioteca Técnica y manual de mantenimiento.
+
+
 ## 3.2 — Operational Identity Edition
 - Integración de las cinco imágenes oficiales en la Biblioteca Técnica.
 - Nuevas imágenes OCB-201 Sentinel Tactical y OCB-202 Sentinel Command.

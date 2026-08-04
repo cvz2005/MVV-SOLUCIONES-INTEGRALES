@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MVV Experience 3.1.2: soluciones tecnológicas, capacidades operativas y servicios profesionales para infraestructura crítica y seguridad pública.">
-  <title>MVV Experience 3.1.2</title>
+  <meta name="application-name" content="MVV Experience 3.3">
+  <meta name="description" content="MVV Experience 3.3: soluciones tecnológicas, capacidades operativas y servicios profesionales para infraestructura crítica y seguridad pública.">
+  <title>MVV Experience 3.3</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3.3">
 </head>
 <body>
 <header class="site-header" id="top">
   <div class="container nav-wrap">
     <a href="#inicio" class="brand" aria-label="MVV inicio">
       <img src="assets/images/mvv-logo.svg" alt="MVV Soluciones Integrales">
-      <span>Experience 3.1.2</span>
+      <span>Experience 3.3</span>
     </a>
     <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="main-nav" aria-label="Navegación principal">
@@ -35,7 +36,7 @@
         </div>
       </div>
       <a href="#servicios">Servicios MVV</a>
-      <a href="#documentacion">Documentación</a>
+      <a href="#documentacion">Biblioteca Técnica</a>
       <a href="#contacto" class="nav-cta">Contacto</a>
     </nav>
   </div>
@@ -111,7 +112,7 @@
         <h3>MVV Sentinel Tactical</h3><p class="package-sub">Observación, conectividad y despliegue táctico.</p>
         <div class="includes"><h4>Integra</h4><div class="chip-row"><span>Sentinel Air</span><span>NOSSACEL Connect</span><span>Servicios MVV</span></div></div>
         <ul class="check-list"><li>Ingeniería e integración</li><li>Instalación y configuración</li><li>Capacitación y puesta en operación</li><li>Garantía de integración y soporte inicial</li></ul>
-        <div class="investment"><small>Inversión desde</small><strong>$1,525,000 MXN</strong><span>+ IVA</span></div>
+        <div class="investment" id="price-tactical"><small data-bind="prices.tactical.label">Inversión desde</small><strong data-bind="prices.tactical.amount">$1,525,000 MXN</strong><span data-bind="prices.tactical.note">+ IVA</span></div>
         <a class="btn btn-secondary full" data-doc="ocb201" href="#">Descargar OCB-201 – Operational Capability Brief</a>
       </article>
       <article class="package-card featured reveal" id="command">
@@ -120,7 +121,7 @@
         <h3>MVV Sentinel Command</h3><p class="package-sub">De la observación táctica a la coordinación integral.</p>
         <div class="includes"><h4>Integra</h4><div class="chip-row"><span>Todo Tactical</span><span>Command Mobile</span><span>Servicios MVV</span></div></div>
         <ul class="check-list"><li>Centro de comando móvil</li><li>Comunicaciones y plataformas integradas</li><li>Protocolos, capacitación y puesta en operación</li><li>Soporte especializado durante el despliegue</li></ul>
-        <div class="investment"><small>Inversión desde</small><strong>$12,472,000 MXN</strong><span>+ IVA · Incluye Ford F-550 2026</span></div>
+        <div class="investment" id="price-command"><small data-bind="prices.command.label">Inversión desde</small><strong data-bind="prices.command.amount">$12,472,000 MXN</strong><span data-bind="prices.command.note">+ IVA · Incluye Ford F-550 2026</span></div>
         <a class="btn btn-primary full" data-doc="ocb202" href="#">Descargar OCB-202 – Operational Capability Brief</a>
       </article>
     </div>
@@ -150,43 +151,37 @@
 
 <section class="section docs" id="documentacion">
   <div class="container">
-    <div class="section-head reveal"><span class="eyebrow">Documentación</span><h2>Biblioteca Técnica MVV.</h2><p>Documentación oficial de soluciones tecnológicas y capacidades operativas.</p></div>
-    <div class="family-title reveal"><span>TSB</span><div><h3>Technical Solution Briefs</h3><p>Documentación técnica de las soluciones tecnológicas MVV.</p></div></div>
+    <div class="section-head reveal"><span class="eyebrow">Biblioteca Técnica</span><h2>Biblioteca Técnica MVV.</h2><p>Documentación oficial de soluciones tecnológicas y capacidades operativas.</p></div>
+    <div class="family-title reveal"><span>TSB</span><div><h3>Soluciones Tecnológicas (TSB)</h3><p>Technical Solution Briefs de las soluciones tecnológicas MVV.</p></div></div>
     <div class="docs-grid">
       <a class="doc-card reveal" data-doc="tsb101" href="#"><img src="assets/images/sentinel-air.jpg" alt="TSB-101 MVV Sentinel Air"><div><span>Technical Solution Brief</span><h3>TSB-101 · Sentinel Air</h3><p>Plataforma aérea autónoma para vigilancia y coordinación operativa.</p></div></a>
       <a class="doc-card reveal" data-doc="tsb102" href="#"><img src="assets/images/connect.jpg" alt="TSB-102 MVV NOSSACEL Connect"><div><span>Technical Solution Brief</span><h3>TSB-102 · NOSSACEL Connect</h3><p>Comunicaciones inteligentes para infraestructura crítica.</p></div></a>
       <a class="doc-card reveal" data-doc="tsb103" href="#"><img src="assets/images/mobile-command.jpg" alt="TSB-103 MVV Command Mobile"><div><span>Technical Solution Brief</span><h3>TSB-103 · Command Mobile</h3><p>Centro de comando y control móvil para operaciones críticas.</p></div></a>
     </div>
-    <div class="family-title operational reveal"><span>OCB</span><div><h3>Operational Capability Briefs</h3><p>Documentación oficial de capacidades operativas MVV.</p></div></div>
+    <div class="family-title operational reveal"><span>OCB</span><div><h3>Capacidades Operativas (OCB)</h3><p>Operational Capability Briefs de las capacidades operativas MVV.</p></div></div>
     <div class="docs-grid">
       <a class="doc-card reveal" data-doc="ocb201" href="#"><img src="assets/images/sentinel-tactical.jpg" alt="OCB-201 MVV Sentinel Tactical"><div><span>Operational Capability Brief</span><h3>OCB-201 · Sentinel Tactical</h3><p>Vigilancia temporal e infraestructura crítica.</p></div></a>
       <a class="doc-card reveal" data-doc="ocb202" href="#"><img src="assets/images/sentinel-command.jpg" alt="OCB-202 MVV Sentinel Command"><div><span>Operational Capability Brief</span><h3>OCB-202 · Sentinel Command</h3><p>Mando, control y coordinación operativa integral.</p></div></a>
     </div>
-<!-- ==========================================================
-     PROPUESTAS VIGENTES (OCULTA TEMPORALMENTE)
-     Fecha: 30/07/2026
-     Se conserva para futuras propuestas comerciales.
-==========================================================
-    <div class="family-title reveal"><span>03</span><div><h3>Propuestas vigentes</h3><p>Información técnica y comercial de referencia.</p></div></div>
-    <div class="docs-grid">
-      <a class="doc-card reveal" data-doc="technical" href="#"><img src="assets/images/thumb_Propuesta_Tecnica_MVV_Sentinel.jpg" alt="Propuesta técnica"><div><span>Propuesta</span><h3>Propuesta Técnica</h3><p>Arquitectura, alcance y capacidad operativa.</p></div></a>
-      <a class="doc-card reveal" data-doc="commercial" href="#"><img src="assets/images/thumb_Propuesta_Comercial_MVV_Sentinel.jpg" alt="Propuesta comercial"><div><span>Propuesta</span><h3>Propuesta Comercial</h3><p>Configuraciones, inversión y condiciones.</p></div></a>
-
-========================================================== -->
-    
+    <div id="current-proposals" hidden>
+      <div class="family-title reveal"><span>03</span><div><h3>Propuestas vigentes</h3><p>Información técnica y comercial de referencia.</p></div></div>
+      <div class="docs-grid">
+        <a class="doc-card reveal" data-doc="technical" href="#"><img src="assets/images/thumb_Propuesta_Tecnica_MVV_Sentinel.jpg" alt="Propuesta técnica"><div><span>Propuesta</span><h3>Propuesta Técnica</h3><p>Arquitectura, alcance y capacidad operativa.</p></div></a>
+        <a class="doc-card reveal" data-doc="commercial" href="#"><img src="assets/images/thumb_Propuesta_Comercial_MVV_Sentinel.jpg" alt="Propuesta comercial"><div><span>Propuesta</span><h3>Propuesta Comercial</h3><p>Configuraciones, inversión y condiciones.</p></div></a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section contact" id="contacto">
   <div class="container contact-grid">
-    <div class="reveal"><span class="eyebrow light">Contacto</span><h2>Hablemos de su próximo proyecto.</h2><p>Diseñemos una solución alineada con sus necesidades operativas, técnicas y presupuestales.</p><div class="contact-actions"><a class="btn btn-white" href="mailto:informes@mvv.com.mx">Enviar correo</a><a class="btn btn-outline-white" id="whatsapp" href="#">WhatsApp</a></div></div>
-    <div class="contact-card reveal"><div class="person"><h3>Carlos Vázquez</h3><span>MVV Soluciones Integrales</span><a href="tel:+525543708747">+52 55 4370 8747</a><a href="mailto:informes@mvv.com.mx">informes@mvv.com.mx</a><a href="https://www.mvv.com.mx" target="_blank" rel="noopener">www.mvv.com.mx</a></div><div class="qr"><img src="assets/images/qr-carlos-vazquez.png" alt="Código QR de contacto"><span>Escanee para guardar el contacto</span><a href="assets/contact/Carlos_Vazquez_MVV.vcf" download>Descargar vCard</a></div></div>
+    <div class="reveal"><span class="eyebrow light">Contacto</span><h2>Hablemos de su próximo proyecto.</h2><p>Diseñemos una solución alineada con sus necesidades operativas, técnicas y presupuestales.</p><div class="contact-actions"><a class="btn btn-white" id="email-button" href="mailto:informes@mvv.com.mx">Enviar correo</a><a class="btn btn-outline-white" id="whatsapp" href="#">WhatsApp</a></div></div>
+    <div class="contact-card reveal"><div class="person"><h3 id="contact-name">Carlos Vázquez</h3><span id="contact-company">MVV Soluciones Integrales</span><a id="contact-phone" href="tel:+525543708747">+52 55 4370 8747</a><a id="contact-email" href="mailto:informes@mvv.com.mx">informes@mvv.com.mx</a><a id="contact-website" href="https://www.mvv.com.mx" target="_blank" rel="noopener">www.mvv.com.mx</a></div><div class="qr"><img src="assets/images/qr-carlos-vazquez.png" alt="Código QR de contacto"><span>Escanee para guardar el contacto</span><a id="contact-vcard" href="assets/contact/Carlos_Vazquez_MVV.vcf" download>Descargar vCard</a></div></div>
   </div>
 </section>
 </main>
 
-<footer><div class="container"><img src="assets/images/mvv-logo.svg" alt="MVV"><p>Capacidades Operativas para Infraestructura Crítica y Seguridad Pública.</p><span>© 2026 MVV Soluciones Integrales · Experience 3.1.2</span></div></footer>
-<script src="config.js"></script><script src="script.js"></script>
+<footer><div class="container"><img src="assets/images/mvv-logo.svg" alt="MVV"><p>Capacidades Operativas para Infraestructura Crítica y Seguridad Pública.</p><span>© 2026 MVV Soluciones Integrales · Experience 3.3</span></div></footer>
+<script src="config.js?v=3.3"></script><script src="script.js?v=3.3"></script>
 </body>
 </html>
