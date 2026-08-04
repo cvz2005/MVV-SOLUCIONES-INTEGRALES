@@ -1,0 +1,12 @@
+MVV EXPERIENCE 3.4 REAL — VALIDATION REPORT
+Fecha: 2026-08-04
+
+Sintaxis config.js: APROBADA
+Sintaxis script.js: APROBADA
+Control showPrices=false enlazado a .investment: APROBADO
+Control showCurrentProposals enlazado: APROBADO
+Controles TSB/OCB con IDs estables: APROBADOS
+Identificador de caché 3.4 REAL: APROBADO
+Referencias locales faltantes: 0
+
+Resultado: APROBADO

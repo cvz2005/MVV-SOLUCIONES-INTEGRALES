@@ -10,11 +10,22 @@
     return `${url}${url.includes('?') ? '&' : '?'}v=${encodeURIComponent(cacheVersion)}`;
   };
 
-  const setVisible = (selectorOrElement, visible) => {
-    const el = typeof selectorOrElement === 'string'
-      ? document.querySelector(selectorOrElement)
-      : selectorOrElement;
-    if (el) el.hidden = !visible;
+  const elements = (selector) => Array.from(document.querySelectorAll(selector));
+
+  // Usa clase + atributo hidden + estilo inline para evitar que cualquier CSS reabra el elemento.
+  const setVisible = (target, visible) => {
+    const list = typeof target === 'string' ? elements(target) : [target].filter(Boolean);
+    list.forEach((el) => {
+      el.hidden = !visible;
+      el.classList.toggle('mvv-config-hidden', !visible);
+      if (!visible) {
+        el.style.setProperty('display', 'none', 'important');
+        el.setAttribute('aria-hidden', 'true');
+      } else {
+        el.style.removeProperty('display');
+        el.removeAttribute('aria-hidden');
+      }
+    });
   };
 
   const setText = (selector, value) => {
@@ -22,119 +33,129 @@
     if (el && value !== undefined && value !== null) el.textContent = value;
   };
 
-  // Texto configurable mediante data-bind="ruta.al.valor".
-  document.querySelectorAll('[data-bind]').forEach((el) => {
-    let value = config;
-    for (const key of el.dataset.bind.split('.')) value = value?.[key];
-    if (value !== undefined && value !== null) el.textContent = value;
-  });
-
-  // Documentos configurables y versionados para evitar caché.
-  document.querySelectorAll('[data-doc]').forEach((link) => {
-    const url = config.docs?.[link.dataset.doc];
-    if (!url) return;
-    link.href = appendVersion(url);
-    link.target = '_blank';
-    link.rel = 'noopener';
-  });
-
-  // Visibilidad de módulos.
-  setVisible('#current-proposals', visibility.showCurrentProposals === true);
-  setVisible('#contacto', visibility.showContact !== false);
-  setVisible('#c11', visibility.showC11 !== false);
-  setVisible('.commercial-note', visibility.showCommercialNote !== false);
-  setVisible('#whatsapp', visibility.showWhatsapp !== false);
-  setVisible('#email-button', visibility.showEmailButton !== false);
-  setVisible('#contact-website', visibility.showWebsite !== false);
-  setVisible('#contact-vcard', visibility.showVcard !== false);
-
-  const tsbFamily = document.querySelector('.docs .family-title:not(.operational)');
-  const tsbGrid = tsbFamily?.nextElementSibling;
-  if (visibility.showTSB === false) {
-    setVisible(tsbFamily, false);
-    setVisible(tsbGrid, false);
-  }
-
-  const ocbFamily = document.querySelector('.docs .family-title.operational');
-  const ocbGrid = ocbFamily?.nextElementSibling;
-  if (visibility.showOCB === false) {
-    setVisible(ocbFamily, false);
-    setVisible(ocbGrid, false);
-  }
-
-  // Precios: se conservan las tarjetas, pero se sustituyen los importes por un mensaje.
-  if (visibility.showPrices === false) {
-    document.querySelectorAll('.investment').forEach((box) => {
-      box.classList.add('price-hidden');
-      box.innerHTML = `<small>${config.prices?.hiddenMessage || 'Inversión bajo consulta'}</small>`;
+  const applyConfiguration = () => {
+    // Textos configurables.
+    elements('[data-bind]').forEach((el) => {
+      let value = config;
+      for (const key of el.dataset.bind.split('.')) value = value?.[key];
+      if (value !== undefined && value !== null) el.textContent = value;
     });
-  }
 
-  // Contacto.
-  const c = config.contact || {};
-  setText('#contact-name', c.name);
-  setText('#contact-company', c.company);
-  setText('#contact-phone', c.phoneDisplay);
-  setText('#contact-email', c.email);
-  setText('#contact-website', c.websiteDisplay);
+    // Documentos configurables.
+    elements('[data-doc]').forEach((link) => {
+      const url = config.docs?.[link.dataset.doc];
+      if (!url) return;
+      link.href = appendVersion(url);
+      link.target = '_blank';
+      link.rel = 'noopener';
+    });
 
-  const phone = document.getElementById('contact-phone');
-  if (phone && c.phoneLink) phone.href = `tel:${c.phoneLink}`;
+    // PRECIOS: false los oculta completamente.
+    setVisible('.investment', visibility.showPrices !== false);
+    // La nota comercial solo tiene sentido cuando los precios están visibles.
+    setVisible('.commercial-note', visibility.showPrices !== false && visibility.showCommercialNote !== false);
 
-  const email = document.getElementById('contact-email');
-  if (email && c.email) email.href = `mailto:${c.email}`;
+    // Propuestas, TSB y OCB.
+    setVisible('#current-proposals', visibility.showCurrentProposals === true);
+    setVisible('#tsb-library-title', visibility.showTSB !== false);
+    setVisible('#tsb-library-grid', visibility.showTSB !== false);
+    setVisible('#ocb-library-title', visibility.showOCB !== false);
+    setVisible('#ocb-library-grid', visibility.showOCB !== false);
+    // También oculta los botones de descarga relacionados fuera de la biblioteca.
+    setVisible('[data-doc="tsb101"], [data-doc="tsb102"], [data-doc="tsb103"]', visibility.showTSB !== false);
+    setVisible('[data-doc="ocb201"], [data-doc="ocb202"]', visibility.showOCB !== false);
 
-  const emailButton = document.getElementById('email-button');
-  if (emailButton && c.email) emailButton.href = `mailto:${c.email}`;
+    // Otros módulos.
+    setVisible('#c11', visibility.showC11 !== false);
+    setVisible('a[href="#c11"]', visibility.showC11 !== false);
+    setVisible('#contacto', visibility.showContact !== false);
+    setVisible('a[href="#contacto"]', visibility.showContact !== false);
+    setVisible('#whatsapp', visibility.showContact !== false && visibility.showWhatsapp !== false);
+    setVisible('#email-button', visibility.showContact !== false && visibility.showEmailButton !== false);
+    setVisible('#contact-website', visibility.showContact !== false && visibility.showWebsite !== false);
+    setVisible('#contact-vcard', visibility.showContact !== false && visibility.showVcard !== false);
 
-  const website = document.getElementById('contact-website');
-  if (website && c.websiteUrl) website.href = c.websiteUrl;
+    // Contacto.
+    const c = config.contact || {};
+    setText('#contact-name', c.name);
+    setText('#contact-company', c.company);
+    setText('#contact-phone', c.phoneDisplay);
+    setText('#contact-email', c.email);
+    setText('#contact-website', c.websiteDisplay);
 
-  const vcard = document.getElementById('contact-vcard');
-  if (vcard && c.vcard) vcard.href = appendVersion(c.vcard);
+    const phone = document.getElementById('contact-phone');
+    if (phone && c.phoneLink) phone.href = `tel:${c.phoneLink}`;
 
-  const wa = document.getElementById('whatsapp');
-  if (wa && c.whatsapp) {
-    wa.href = `https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappMessage || 'Hola, me interesa conocer las soluciones MVV.')}`;
-    wa.target = '_blank';
-    wa.rel = 'noopener';
-  }
+    const email = document.getElementById('contact-email');
+    if (email && c.email) email.href = `mailto:${c.email}`;
 
-  // Versionado automático de imágenes locales.
-  document.querySelectorAll('img[src]').forEach((img) => {
-    const src = img.getAttribute('src');
-    if (src && !src.includes('?v=') && !/^(https?:|data:)/i.test(src)) {
-      img.src = appendVersion(src);
+    const emailButton = document.getElementById('email-button');
+    if (emailButton && c.email) emailButton.href = `mailto:${c.email}`;
+
+    const website = document.getElementById('contact-website');
+    if (website && c.websiteUrl) website.href = c.websiteUrl;
+
+    const vcard = document.getElementById('contact-vcard');
+    if (vcard && c.vcard) vcard.href = appendVersion(c.vcard);
+
+    const wa = document.getElementById('whatsapp');
+    if (wa && c.whatsapp) {
+      wa.href = `https://wa.me/${c.whatsapp}?text=${encodeURIComponent(c.whatsappMessage || 'Hola, me interesa conocer las soluciones MVV.')}`;
+      wa.target = '_blank';
+      wa.rel = 'noopener';
     }
-  });
 
-  // Menú y animaciones.
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.main-nav');
-  toggle?.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-  });
+    // Versionado automático de imágenes locales.
+    elements('img[src]').forEach((img) => {
+      const src = img.getAttribute('src');
+      if (src && !/[?&]v=/.test(src) && !/^(https?:|data:)/i.test(src)) img.src = appendVersion(src);
+    });
 
-  document.querySelector('.nav-dropdown > button')?.addEventListener('click', (e) => {
-    if (window.innerWidth <= 980) e.currentTarget.parentElement.classList.toggle('open');
-  });
+    document.documentElement.dataset.mvvConfigApplied = 'true';
+  };
 
-  document.querySelectorAll('.main-nav a').forEach((a) => {
-    a.addEventListener('click', () => nav.classList.remove('open'));
-  });
+  const initializeNavigation = () => {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.querySelector('.nav-dropdown > button')?.addEventListener('click', (e) => {
+      if (window.innerWidth <= 980) e.currentTarget.parentElement.classList.toggle('open');
+    });
+
+    elements('.main-nav a').forEach((a) => {
+      a.addEventListener('click', () => nav?.classList.remove('open'));
+    });
+  };
+
+  const initializeAnimations = () => {
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      elements('.reveal').forEach((el) => observer.observe(el));
+    } else {
+      elements('.reveal').forEach((el) => el.classList.add('visible'));
+    }
+  };
+
+  const start = () => {
+    applyConfiguration();
+    initializeNavigation();
+    initializeAnimations();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
   } else {
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+    start();
   }
 })();

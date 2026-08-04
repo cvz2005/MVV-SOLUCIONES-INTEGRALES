@@ -3,3 +3,6 @@
 /* MVV 3.4: presentación del mensaje cuando los precios están ocultos */
 .investment.price-hidden { display:flex; align-items:center; justify-content:center; min-height:86px; text-align:center; }
 .investment.price-hidden small { font-size:1rem; font-weight:700; line-height:1.35; }
+
+/* MVV 3.4 REAL: ocultamiento controlado desde config.js */
+.mvv-config-hidden{display:none!important;}

@@ -1,19 +1,28 @@
+/**
+ * MVV Experience 3.4 REAL — Archivo central de configuración
+ * Cambia únicamente los valores indicados. No borres comas ni llaves.
+ */
 window.MVV_CONFIG = {
-  version: '3.4',
-  cacheVersion: '3.4',
+  version: '3.4 REAL',
+  cacheVersion: '3.4-real-20260804',
 
   visibility: {
+    // false = oculta completamente los bloques de inversión.
     showPrices: false,
+
+    // Biblioteca y módulos.
     showCurrentProposals: false,
     showTSB: true,
     showOCB: true,
     showContact: true,
+    showC11: true,
+    showCommercialNote: true,
+
+    // Elementos específicos del contacto.
     showWhatsapp: true,
     showEmailButton: true,
     showWebsite: true,
-    showVcard: true,
-    showC11: true,
-    showCommercialNote: true
+    showVcard: true
   },
 
   prices: {
@@ -26,8 +35,7 @@ window.MVV_CONFIG = {
       label: 'Inversión desde',
       amount: '$12,472,000 MXN',
       note: '+ IVA · Incluye Ford F-550 2026'
-    },
-    hiddenMessage: 'Configuración e inversión bajo consulta'
+    }
   },
 
   docs: {
