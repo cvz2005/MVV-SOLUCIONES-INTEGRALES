@@ -29,12 +29,12 @@ window.MVV_CONFIG = {
     tactical: {
       label: 'Inversión desde',
       amount: '$1,525,000 MXN',
-      note: '+ IVA'
+      note: '+ IVA Incluye solución llave en mano con plataforma aérea, integración tecnológica, comunicaciones, capacitación operativa, documentación técnica, puesta en marcha y garantía. La configuración final podrá ajustarse de acuerdo con los requerimientos específicos del proyecto'
     },
     command: {
       label: 'Inversión desde',
       amount: '$12,472,000 MXN',
-      note: '+ IVA · Incluye Ford F-550 2026'
+      note: '+ IVA · Incluye vehículo especializado, ingeniería, integración de sistemas, comunicaciones, estaciones de operación, capacitación, documentación técnica, puesta en marcha y garantía. La configuración podrá personalizarse conforme a los requerimientos operativos del cliente.'
     }
   },
 
