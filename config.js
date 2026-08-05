@@ -8,7 +8,7 @@ window.MVV_CONFIG = {
 
   visibility: {
     // false = oculta completamente los bloques de inversión.
-    showPrices: true,
+    showPrices: false,
 
     // Biblioteca y módulos.
     showCurrentProposals: false,
