@@ -36,7 +36,7 @@ window.MVV_CONFIG = {
   prices: {
     frontier: {
       label: 'Inversión desde',
-      amount: '$720,000 MXN',
+      amount: '$650,000 MXN',
       note: '+ IVA · Incluye MVV NOSSACEL Connect. El precio final depende de la ingeniería del sitio, sensores, capacidad energética y alcance operativo.'
     },
     tactical: {
