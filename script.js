@@ -4,6 +4,13 @@
   const config = window.MVV_CONFIG || {};
   const visibility = config.visibility || {};
   const cacheVersion = config.cacheVersion || config.version || '1';
+  const build = config.build || '';
+
+  // Safari puede restaurar una pestaña completa desde BFCache. En ese caso,
+  // recargamos el documento para volver a solicitar config.js.
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) window.location.reload();
+  });
 
   const appendVersion = (url) => {
     if (!url || /^(https?:|mailto:|tel:|#|data:)/i.test(url)) return url;
@@ -64,10 +71,11 @@
     // También oculta los botones de descarga relacionados fuera de la biblioteca.
     setVisible('[data-doc="tsb101"], [data-doc="tsb102"], [data-doc="tsb103"]', visibility.showTSB !== false);
     setVisible('[data-doc="ocb201"], [data-doc="ocb202"]', visibility.showOCB !== false);
+    setVisible('[data-doc="ocb203"]', visibility.showOCB !== false && visibility.showFrontier !== false);
 
     // Otros módulos.
-    setVisible('#c11', visibility.showC11 !== false);
-    setVisible('a[href="#c11"]', visibility.showC11 !== false);
+    setVisible('#frontier', visibility.showFrontier !== false);
+    setVisible('a[href="#frontier"]', visibility.showFrontier !== false);
     setVisible('#contacto', visibility.showContact !== false);
     setVisible('a[href="#contacto"]', visibility.showContact !== false);
     setVisible('#whatsapp', visibility.showContact !== false && visibility.showWhatsapp !== false);
@@ -111,6 +119,12 @@
       if (src && !/[?&]v=/.test(src) && !/^(https?:|data:)/i.test(src)) img.src = appendVersion(src);
     });
 
+    // Identificación visible de versión y build.
+    setText('#mvv-brand-version', `Experience ${config.version || '3.5 Stable'}`);
+    setText('#mvv-footer-version', `© 2026 MVV Soluciones Integrales · Experience ${config.version || '3.5 Stable'}${build ? ` · Build ${build}` : ''}`);
+    document.title = `MVV Experience ${config.version || '3.5 Stable'}`;
+    document.documentElement.dataset.mvvVersion = config.version || '';
+    document.documentElement.dataset.mvvBuild = build;
     document.documentElement.dataset.mvvConfigApplied = 'true';
   };
 

@@ -1,10 +1,11 @@
 /**
- * MVV Experience 3.4 REAL — Archivo central de configuración
+ * MVV Experience 4.0.1 Frontier Edition — Archivo central de configuración
  * Cambia únicamente los valores indicados. No borres comas ni llaves.
  */
 window.MVV_CONFIG = {
-  version: '3.4 REAL',
-  cacheVersion: '3.4-real-20260804',
+  version: '4.0.1 Frontier Edition',
+  build: '2026.08.05',
+  cacheVersion: '4.0.1-frontier-20260805',
 
   visibility: {
     // false = oculta completamente los bloques de inversión.
@@ -15,7 +16,8 @@ window.MVV_CONFIG = {
     showTSB: true,
     showOCB: true,
     showContact: true,
-    showC11: true,
+    // Controla la tarjeta y opción de menú de MVV Sentinel Frontier.
+    showFrontier: true,
     showCommercialNote: true,
 
     // Elementos específicos del contacto.
@@ -25,7 +27,18 @@ window.MVV_CONFIG = {
     showVcard: true
   },
 
+  frontier: {
+    title: 'MVV Sentinel Frontier',
+    subtitle: 'Vigilancia Autónoma para Accesos e Infraestructura Crítica.',
+    description: 'Estación inteligente y autónoma para proteger accesos remotos, caminos rurales e infraestructura estratégica.'
+  },
+
   prices: {
+    frontier: {
+      label: 'Inversión desde',
+      amount: '$720,000 MXN',
+      note: '+ IVA · Incluye MVV NOSSACEL Connect. El precio final depende de la ingeniería del sitio, sensores, capacidad energética y alcance operativo.'
+    },
     tactical: {
       label: 'Inversión desde',
       amount: '$1,525,000 MXN',
@@ -48,7 +61,8 @@ window.MVV_CONFIG = {
     tsb102: 'assets/documents/tsb/TSB-102.pdf',
     tsb103: 'assets/documents/tsb/TSB-103.pdf',
     ocb201: 'assets/documents/ocb/OCB-201.pdf',
-    ocb202: 'assets/documents/ocb/OCB-202.pdf'
+    ocb202: 'assets/documents/ocb/OCB-202.pdf',
+    ocb203: 'assets/documents/ocb/OCB-203.pdf'
   },
 
   contact: {

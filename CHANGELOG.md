@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.5 Stable — 2026-08-05
+- Recarga de configuración compatible con Safari.
+- Detección de BFCache mediante `pageshow`.
+- Configuración solicitada con marca de tiempo en cada carga.
+- Versión y build visibles.
+- Guía de administración actualizada.
+
 ## 3.4 — Configuration Edition
 - Panel de configuración funcional desde `config.js`.
 - Corrección y validación de `showPrices`.

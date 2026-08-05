@@ -1,0 +1,9 @@
+MVV EXPERIENCE 3.5 STABLE — VALIDATION REPORT
+Build: 2026.08.05
+
+JavaScript config.js: OK
+JavaScript script.js: OK
+Bootstrap inline: OK
+Referencias locales verificadas: 22
+Referencias faltantes: 0
+Resultado: APROBADO

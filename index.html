@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="application-name" content="MVV Experience 3.4">
-  <meta name="description" content="MVV Experience 3.4: soluciones tecnológicas, capacidades operativas y servicios profesionales para infraestructura crítica y seguridad pública.">
-  <title>MVV Experience 3.4 REAL</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="application-name" content="MVV Experience 4.0.1 Frontier Edition">
+  <meta name="description" content="MVV Experience 4.0.1 Frontier Edition: soluciones tecnológicas, capacidades operativas y servicios profesionales para infraestructura crítica y seguridad pública.">
+  <title>MVV Experience 4.0.1 Frontier Edition</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3.3">
+  <link rel="stylesheet" href="styles.css?v=4.0.1-frontier-20260805">
 </head>
 <body>
 <header class="site-header" id="top">
   <div class="container nav-wrap">
     <a href="#inicio" class="brand" aria-label="MVV inicio">
       <img src="assets/images/mvv-logo.svg" alt="MVV Soluciones Integrales">
-      <span>Experience 3.4 REAL</span>
+      <span id="mvv-brand-version">Experience 4.0.1 Frontier Edition</span>
     </a>
     <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="main-nav" aria-label="Navegación principal">
@@ -32,7 +35,7 @@
           <strong>Capacidades operativas</strong>
           <a href="#tactical">MVV Sentinel Tactical</a>
           <a href="#command">MVV Sentinel Command</a>
-          <a href="#c11">C11 Seguridad Inteligente</a>
+          <a href="#frontier">MVV Sentinel Frontier</a>
         </div>
       </div>
       <a href="#servicios">Servicios MVV</a>
@@ -126,9 +129,20 @@
       </article>
     </div>
 
-    <article class="c11-card reveal" id="c11">
-      <div><span class="status developing">PROXIMAMENTE</span><h3>C11 Seguridad Inteligente</h3><p>La siguiente evolución de MVV hacia plataformas de inteligencia, analítica, automatización y coordinación avanzada para infraestructura crítica y seguridad pública.</p></div>
-      <div class="c11-mark">C11<span>visión tecnológica</span></div>
+    <article class="frontier-card reveal" id="frontier">
+      <div class="frontier-image"><img src="assets/images/sentinel-frontier-ocb203.png" alt="MVV Sentinel Frontier vigilancia autónoma"></div>
+      <div class="frontier-content">
+        <div class="frontier-top"><span class="status available">Disponible</span><span class="level">OCB-203</span></div>
+        <h3 data-bind="frontier.title">MVV Sentinel Frontier</h3>
+        <p class="package-sub" data-bind="frontier.subtitle">Vigilancia Autónoma para Accesos e Infraestructura Crítica.</p>
+        <p data-bind="frontier.description">Estación inteligente y autónoma para proteger accesos remotos, caminos rurales e infraestructura estratégica.</p>
+        <div class="frontier-features">
+          <span>Operación 24/7</span><span>Energía fotovoltaica</span><span>ANPR e IA</span><span>Sensores de intrusión</span><span>Gabinete industrial</span><span>Integración C2/C4/C5</span>
+        </div>
+        <div class="frontier-connect"><strong>Incluye MVV NOSSACEL Connect</strong><p>Conectividad multioperador, administración centralizada y transmisión segura de video, eventos y alarmas.</p></div>
+        <div class="investment frontier-investment" id="price-frontier"><small data-bind="prices.frontier.label">Inversión desde</small><strong data-bind="prices.frontier.amount">$720,000 MXN</strong><span data-bind="prices.frontier.note">+ IVA · Configuración sujeta a ingeniería del sitio y alcance operativo.</span></div>
+        <a class="btn btn-primary full" data-doc="ocb203" href="#">Descargar OCB-203 – Operational Capability Brief</a>
+      </div>
     </article>
     <p class="commercial-note">Precios de referencia conforme a la propuesta comercial vigente. Las configuraciones pueden ajustarse al alcance, condiciones del sitio y requerimientos operativos del proyecto.</p>
   </div>
@@ -162,6 +176,7 @@
     <div id="ocb-library-grid" class="docs-grid">
       <a class="doc-card reveal" data-doc="ocb201" href="#"><img src="assets/images/sentinel-tactical.jpg" alt="OCB-201 MVV Sentinel Tactical"><div><span>Operational Capability Brief</span><h3>OCB-201 · Sentinel Tactical</h3><p>Vigilancia temporal e infraestructura crítica.</p></div></a>
       <a class="doc-card reveal" data-doc="ocb202" href="#"><img src="assets/images/sentinel-command.jpg" alt="OCB-202 MVV Sentinel Command"><div><span>Operational Capability Brief</span><h3>OCB-202 · Sentinel Command</h3><p>Mando, control y coordinación operativa integral.</p></div></a>
+      <a class="doc-card reveal" data-doc="ocb203" href="#"><img src="assets/images/sentinel-frontier-ocb203.png" alt="OCB-203 MVV Sentinel Frontier"><div><span>Operational Capability Brief</span><h3>OCB-203 · Sentinel Frontier</h3><p>Vigilancia autónoma para accesos e infraestructura crítica.</p></div></a>
     </div>
     <div id="current-proposals" hidden>
       <div class="family-title reveal"><span>03</span><div><h3>Propuestas vigentes</h3><p>Información técnica y comercial de referencia.</p></div></div>
@@ -181,7 +196,26 @@
 </section>
 </main>
 
-<footer><div class="container"><img src="assets/images/mvv-logo.svg" alt="MVV"><p>Capacidades Operativas para Infraestructura Crítica y Seguridad Pública.</p><span>© 2026 MVV Soluciones Integrales · Experience 3.4 REAL</span></div></footer>
-<script src="config.js?v=3.4-real-20260804"></script><script src="script.js?v=3.4-real-20260804"></script>
+<footer><div class="container"><img src="assets/images/mvv-logo.svg" alt="MVV"><p>Capacidades Operativas para Infraestructura Crítica y Seguridad Pública.</p><span id="mvv-footer-version">© 2026 MVV Soluciones Integrales · Experience 4.0.1 Frontier Edition · Build 2026.08.05</span></div></footer>
+<script>
+(() => {
+  'use strict';
+  const BUILD = '4.0.1-frontier-20260805';
+  const loadScript = (src) => new Promise((resolve, reject) => {
+    const element = document.createElement('script');
+    element.src = src;
+    element.defer = true;
+    element.onload = resolve;
+    element.onerror = reject;
+    document.body.appendChild(element);
+  });
+
+  // config.js se solicita con una marca de tiempo nueva en cada carga.
+  // Así Safari no reutiliza una configuración anterior.
+  loadScript(`config.js?v=${Date.now()}`)
+    .then(() => loadScript(`script.js?v=${BUILD}`))
+    .catch((error) => console.error('No fue posible cargar la configuración MVV.', error));
+})();
+</script>
 </body>
 </html>

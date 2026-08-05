@@ -1,0 +1,9 @@
+MVV Experience 4.0 Frontier Edition — Validation Report
+
+HTML parsed: OK
+JavaScript syntax: OK
+Local references missing: 0
+Internal anchors missing: 0
+OCB-203 present: True
+Sentinel Frontier image present: True
+Configuration controls: showFrontier, showPrices, prices.frontier, docs.ocb203
